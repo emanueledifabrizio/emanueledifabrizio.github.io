@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calcolatore Percentuale</title>
+</head>
+<body>
+    <h1>Calcolatore Percentuale</h1>
+
+    <p>Calcola quanto è il X% di Y.</p>
+
+    <input type="number" id="percentuale" placeholder="Percentuale (es. 20)">
+    <input type="number" id="numero" placeholder="Numero (es. 150)">
+    <button onclick="calcola()">Calcola</button>
+
+    <p id="risultato"></p>
+
+    <script>
+        function calcola() {
+            let p = document.getElementById("percentuale").value;
+            let n = document.getElementById("numero").value;
+            let risultato = (p / 100) * n;
+            document.getElementById("risultato").innerText = risultato.toFixed(2);
+        }
+    </script>
+</body>
+</html>
