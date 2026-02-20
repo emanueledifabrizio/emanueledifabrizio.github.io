@@ -5,22 +5,28 @@
     <title>Convertitore Euro ↔ Lira</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav>
-    <a href="index.html">Home</a> |
-    <a href="tools.html">Tool</a>
-</nav>
-<hr>
+        <a href="index.html">Home</a> |
+        <a href="tools.html">Tool</a>
+    </nav>
+    <hr>
 
     <h1>Convertitore Euro ↔ Lira</h1>
 
-    <h3>Da Euro a Lire</h3>
-    <input type="number" id="euro" placeholder="Euro">
+    <p>
+        Usa questo semplice strumento per convertire rapidamente tra Euro e Lire.
+        Il tasso di conversione ufficiale è: <strong>1 Euro = 1936.27 Lire</strong>.
+    </p>
+
+    <h2>Da Euro a Lire</h2>
+    <input type="number" id="euro" placeholder="Inserisci Euro">
     <button onclick="euroToLira()">Converti</button>
     <p id="risultatoLira"></p>
 
-    <h3>Da Lire a Euro</h3>
-    <input type="number" id="lira" placeholder="Lire">
+    <h2>Da Lire a Euro</h2>
+    <input type="number" id="lira" placeholder="Inserisci Lire">
     <button onclick="liraToEuro()">Converti</button>
     <p id="risultatoEuro"></p>
 
