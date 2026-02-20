@@ -5,16 +5,22 @@
     <title>Calcolatore Percentuale</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav>
-    <a href="index.html">Home</a> |
-    <a href="tools.html">Tool</a>
-</nav>
-<hr>
+        <a href="index.html">Home</a> |
+        <a href="tools.html">Tool</a>
+    </nav>
+    <hr>
 
     <h1>Calcolatore Percentuale</h1>
 
-    <p>Calcola quanto è il X% di Y.</p>
+    <p>
+        Inserisci una percentuale e un numero per calcolare rapidamente quanto vale.
+        Esempio: 20% di 150.
+    </p>
+
+    <h2>Calcola percentuale</h2>
 
     <input type="number" id="percentuale" placeholder="Percentuale (es. 20)">
     <input type="number" id="numero" placeholder="Numero (es. 150)">
@@ -26,6 +32,12 @@
         function calcola() {
             let p = document.getElementById("percentuale").value;
             let n = document.getElementById("numero").value;
+
+            if (p === "" || n === "") {
+                document.getElementById("risultato").innerText = "Inserisci entrambi i valori.";
+                return;
+            }
+
             let risultato = (p / 100) * n;
             document.getElementById("risultato").innerText = risultato.toFixed(2);
         }
