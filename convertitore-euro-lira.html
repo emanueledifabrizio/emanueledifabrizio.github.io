@@ -15,32 +15,37 @@
 
     <h1>Convertitore Euro ↔ Lira</h1>
 
-    <p>
-        Usa questo semplice strumento per convertire rapidamente tra Euro e Lire.
-        Il tasso di conversione ufficiale è: <strong>1 Euro = 1936.27 Lire</strong>.
-    </p>
+    <p>Inserisci un valore in Euro o in Lire e converti rapidamente.</p>
 
     <h2>Da Euro a Lire</h2>
-    <input type="number" id="euro" placeholder="Inserisci Euro">
+    <input type="number" id="euro" placeholder="Euro">
     <button onclick="euroToLira()">Converti</button>
-    <p id="risultatoLira"></p>
+    <p id="risEuro"></p>
 
     <h2>Da Lire a Euro</h2>
-    <input type="number" id="lira" placeholder="Inserisci Lire">
+    <input type="number" id="lira" placeholder="Lire">
     <button onclick="liraToEuro()">Converti</button>
-    <p id="risultatoEuro"></p>
+    <p id="risLira"></p>
 
     <script>
         function euroToLira() {
             let euro = document.getElementById("euro").value;
-            let lira = euro * 1936.27;
-            document.getElementById("risultatoLira").innerText = lira.toFixed(2) + " Lire";
+            if (euro === "") {
+                document.getElementById("risEuro").innerText = "Inserisci un valore.";
+                return;
+            }
+            let lire = euro * 1936.27;
+            document.getElementById("risEuro").innerText = lire.toFixed(2) + " Lire";
         }
 
         function liraToEuro() {
             let lira = document.getElementById("lira").value;
+            if (lira === "") {
+                document.getElementById("risLira").innerText = "Inserisci un valore.";
+                return;
+            }
             let euro = lira / 1936.27;
-            document.getElementById("risultatoEuro").innerText = euro.toFixed(2) + " Euro";
+            document.getElementById("risLira").innerText = euro.toFixed(2) + " €";
         }
     </script>
 
