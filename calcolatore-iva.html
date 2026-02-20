@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calcolatore IVA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="tools.html">Tool</a>
+    </nav>
+    <hr>
+
+    <h1>Calcolatore IVA</h1>
+
+    <p>
+        Inserisci un importo e scegli se vuoi aggiungere o togliere l'IVA.
+        L'aliquota predefinita è il 22%.
+    </p>
+
+    <h2>Calcola IVA</h2>
+
+    <input type="number" id="importo" placeholder="Importo (es. 100)">
+    <input type="number" id="aliquota" placeholder="Aliquota IVA (es. 22)" value="22">
+
+    <button onclick="aggiungiIVA()">Aggiungi IVA</button>
+    <button onclick="togliIVA()">Togli IVA</button>
+
+    <p id="risultato"></p>
+
+    <script>
+        function aggiungiIVA() {
+            let importo = document.getElementById("importo").value;
+            let aliquota = document.getElementById("aliquota").value;
+
+            if (importo === "" || aliquota === "") {
+                document.getElementById("risultato").innerText = "Inserisci tutti i valori.";
+                return;
+            }
+
+            let iva = (importo * aliquota) / 100;
+            let totale = parseFloat(importo) + iva;
+
+            document.getElementById("risultato").innerText =
+                "IVA: " + iva.toFixed(2) + " € — Totale: " + totale.toFixed(2) + " €";
+        }
+
+        function togliIVA() {
+            let importo = document.getElementById("importo").value;
+            let aliquota = document.getElementById("aliquota").value;
+
+            if (importo === "" || aliquota === "") {
+                document.getElementById("risultato").innerText = "Inserisci tutti i valori.";
+                return;
+            }
+
+            let base = importo / (1 + (aliquota / 100));
+            let iva = importo - base;
+
+            document.getElementById("risultato").innerText =
+                "Imponibile: " + base.toFixed(2) + " € — IVA: " + iva.toFixed(2) + " €";
+        }
+    </script>
+
+    <footer>
+        <hr>
+        <p>© 2026 Emanuele – Sito creato passo dopo passo mentre imparo lo sviluppo web.</p>
+    </footer>
+</body>
+</html>
