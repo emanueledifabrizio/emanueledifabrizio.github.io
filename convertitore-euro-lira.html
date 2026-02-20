@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Convertitore Euro ↔ Lira</title>
+</head>
+<body>
+    <h1>Convertitore Euro ↔ Lira</h1>
+
+    <h3>Da Euro a Lire</h3>
+    <input type="number" id="euro" placeholder="Euro">
+    <button onclick="euroToLira()">Converti</button>
+    <p id="risultatoLira"></p>
+
+    <h3>Da Lire a Euro</h3>
+    <input type="number" id="lira" placeholder="Lire">
+    <button onclick="liraToEuro()">Converti</button>
+    <p id="risultatoEuro"></p>
+
+    <script>
+        function euroToLira() {
+            let euro = document.getElementById("euro").value;
+            let lira = euro * 1936.27;
+            document.getElementById("risultatoLira").innerText = lira.toFixed(2) + " Lire";
+        }
+
+        function liraToEuro() {
+            let lira = document.getElementById("lira").value;
+            let euro = lira / 1936.27;
+            document.getElementById("risultatoEuro").innerText = euro.toFixed(2) + " Euro";
+        }
+    </script>
+</body>
+</html>
