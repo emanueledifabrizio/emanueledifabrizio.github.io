@@ -1,47 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcolatore Percentuale</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="tools.html">Tool</a>
-    </nav>
-    <hr>
 
-    <h1>Calcolatore Percentuale</h1>
+<nav>
+    <span class="logo">🛠️ ED Tools</span> | 
+    <a href="index.html">Home</a> | 
+    <a href="tools.html">Tool</a>
+</nav>
 
-    <p>Inserisci un numero e una percentuale per calcolare il risultato.</p>
+<h1>Calcolatore Percentuale</h1>
 
-    <input type="number" id="numero" placeholder="Numero">
-    <input type="number" id="percentuale" placeholder="Percentuale (%)">
-    <button onclick="calcola()">Calcola</button>
+<input type="number" id="num" placeholder="Numero">
+<input type="number" id="perc" placeholder="Percentuale">
 
-    <p id="risultato"></p>
+<button onclick="calc()">Calcola</button>
 
-    <script>
-        function calcola() {
-            let numero = document.getElementById("numero").value;
-            let percentuale = document.getElementById("percentuale").value;
+<p id="result"></p>
 
-            if (numero === "" || percentuale === "") {
-                document.getElementById("risultato").innerText = "Inserisci entrambi i valori.";
-                return;
-            }
+<script>
+function calc() {
+    let n = parseFloat(document.getElementById("num").value);
+    let p = parseFloat(document.getElementById("perc").value);
+    let result = n * (p / 100);
+    document.getElementById("result").innerText = "Risultato: " + result.toFixed(2);
+}
+</script>
 
-            let risultato = (numero * percentuale) / 100;
-            document.getElementById("risultato").innerText =
-                percentuale + "% di " + numero + " = " + risultato.toFixed(2);
-        }
-    </script>
-
-    <footer>
-        <hr>
-        <p>© 2026 Emanuele – Sito creato passo dopo passo mentre imparo lo sviluppo web.</p>
-    </footer>
 </body>
 </html>
