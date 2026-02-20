@@ -15,31 +15,27 @@
 
     <h1>Calcolatore Percentuale</h1>
 
-    <p>
-        Inserisci una percentuale e un numero per calcolare rapidamente quanto vale.
-        Esempio: 20% di 150.
-    </p>
+    <p>Inserisci un numero e una percentuale per calcolare il risultato.</p>
 
-    <h2>Calcola percentuale</h2>
-
-    <input type="number" id="percentuale" placeholder="Percentuale (es. 20)">
-    <input type="number" id="numero" placeholder="Numero (es. 150)">
+    <input type="number" id="numero" placeholder="Numero">
+    <input type="number" id="percentuale" placeholder="Percentuale (%)">
     <button onclick="calcola()">Calcola</button>
 
     <p id="risultato"></p>
 
     <script>
         function calcola() {
-            let p = document.getElementById("percentuale").value;
-            let n = document.getElementById("numero").value;
+            let numero = document.getElementById("numero").value;
+            let percentuale = document.getElementById("percentuale").value;
 
-            if (p === "" || n === "") {
+            if (numero === "" || percentuale === "") {
                 document.getElementById("risultato").innerText = "Inserisci entrambi i valori.";
                 return;
             }
 
-            let risultato = (p / 100) * n;
-            document.getElementById("risultato").innerText = risultato.toFixed(2);
+            let risultato = (numero * percentuale) / 100;
+            document.getElementById("risultato").innerText =
+                percentuale + "% di " + numero + " = " + risultato.toFixed(2);
         }
     </script>
 
