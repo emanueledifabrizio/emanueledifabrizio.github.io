@@ -1,57 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convertitore Euro ↔ Lira</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="tools.html">Tool</a>
-    </nav>
-    <hr>
 
-    <h1>Convertitore Euro ↔ Lira</h1>
+<nav>
+    <span class="logo">🛠️ ED Tools</span> | 
+    <a href="index.html">Home</a> | 
+    <a href="tools.html">Tool</a>
+</nav>
 
-    <p>Inserisci un valore in Euro o in Lire e converti rapidamente.</p>
+<h1>Convertitore Euro ↔ Lira</h1>
 
-    <h2>Da Euro a Lire</h2>
-    <input type="number" id="euro" placeholder="Euro">
-    <button onclick="euroToLira()">Converti</button>
-    <p id="risEuro"></p>
+<input type="number" id="moneyInput" placeholder="Inserisci valore">
+<select id="moneyType">
+    <option value="EtoL">Euro → Lire</option>
+    <option value="LtoE">Lire → Euro</option>
+</select>
 
-    <h2>Da Lire a Euro</h2>
-    <input type="number" id="lira" placeholder="Lire">
-    <button onclick="liraToEuro()">Converti</button>
-    <p id="risLira"></p>
+<button onclick="convert()">Converti</button>
 
-    <script>
-        function euroToLira() {
-            let euro = document.getElementById("euro").value;
-            if (euro === "") {
-                document.getElementById("risEuro").innerText = "Inserisci un valore.";
-                return;
-            }
-            let lire = euro * 1936.27;
-            document.getElementById("risEuro").innerText = lire.toFixed(2) + " Lire";
-        }
+<p id="result"></p>
 
-        function liraToEuro() {
-            let lira = document.getElementById("lira").value;
-            if (lira === "") {
-                document.getElementById("risLira").innerText = "Inserisci un valore.";
-                return;
-            }
-            let euro = lira / 1936.27;
-            document.getElementById("risLira").innerText = euro.toFixed(2) + " €";
-        }
-    </script>
+<script>
+function convert() {
+    let value = parseFloat(document.getElementById("moneyInput").value);
+    let type = document.getElementById("moneyType").value;
+    let result = "";
 
-    <footer>
-        <hr>
-        <p>© 2026 Emanuele – Sito creato passo dopo passo mentre imparo lo sviluppo web.</p>
-    </footer>
+    if (type === "EtoL") result = value * 1936.27;
+    else result = value / 1936.27;
+
+    document.getElementById("result").innerText = "Risultato: " + result.toFixed(2);
+}
+</script>
+
 </body>
 </html>
