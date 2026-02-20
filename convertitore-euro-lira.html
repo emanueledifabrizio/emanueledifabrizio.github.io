@@ -11,7 +11,8 @@
 <nav>
     <span class="logo">🛠️ ED Tools</span> | 
     <a href="index.html">Home</a> | 
-    <a href="tools.html">Tool</a>
+    <a href="tools.html">Tool</a> |
+    <button id="darkToggle">🌙</button>
 </nav>
 
 <h1>Convertitore Euro ↔ Lira</h1>
@@ -37,6 +38,11 @@ function convert() {
 
     document.getElementById("result").innerText = "Risultato: " + result.toFixed(2);
 }
+
+document.getElementById("darkToggle").onclick = function() {
+    document.body.classList.toggle("dark-mode");
+    this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+};
 </script>
 
 </body>
