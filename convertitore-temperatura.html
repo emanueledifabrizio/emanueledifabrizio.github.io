@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Convertitore Temperatura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="tools.html">Tool</a>
+    </nav>
+    <hr>
+
+    <h1>Convertitore Temperatura (°C ↔ °F)</h1>
+
+    <p>
+        Inserisci una temperatura in gradi Celsius o Fahrenheit e converti rapidamente
+        da una scala all'altra.
+    </p>
+
+    <h2>Da Celsius a Fahrenheit</h2>
+    <input type="number" id="celsius" placeholder="°C">
+    <button onclick="cToF()">Converti</button>
+    <p id="risCtoF"></p>
+
+    <h2>Da Fahrenheit a Celsius</h2>
+    <input type="number" id="fahrenheit" placeholder="°F">
+    <button onclick="fToC()">Converti</button>
+    <p id="risFtoC"></p>
+
+    <script>
+        function cToF() {
+            let c = document.getElementById("celsius").value;
+            if (c === "") {
+                document.getElementById("risCtoF").innerText = "Inserisci un valore.";
+                return;
+            }
+            let f = (c * 9/5) + 32;
+            document.getElementById("risCtoF").innerText = f.toFixed(2) + " °F";
+        }
+
+        function fToC() {
+            let f = document.getElementById("fahrenheit").value;
+            if (f === "") {
+                document.getElementById("risFtoC").innerText = "Inserisci un valore.";
+                return;
+            }
+            let c = (f - 32) * 5/9;
+            document.getElementById("risFtoC").innerText = c.toFixed(2) + " °C";
+        }
+    </script>
+
+    <footer>
+        <hr>
+        <p>© 2026 Emanuele – Sito creato passo dopo passo mentre imparo lo sviluppo web.</p>
+    </footer>
+</body>
+</html>
