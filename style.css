@@ -1,23 +1,23 @@
-/* Font moderno */
+/* Font generale */
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
     margin: 0;
     padding: 0;
+    background-color: #f5f9ff;
+    color: #003d80;
 }
 
 /* Menu */
 nav {
-    background-color: #1e73be;
-    padding: 12px;
-    text-align: center;
+    background-color: #e6f0ff;
+    padding: 15px;
+    font-size: 18px;
 }
 
 nav a {
-    color: white;
     text-decoration: none;
-    margin: 0 15px;
+    color: #0056b3;
+    margin: 0 10px;
     font-weight: bold;
 }
 
@@ -25,50 +25,45 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* Logo */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #003d80;
+}
+
 /* Titoli */
-h1, h2 {
-    color: #1e73be;
+h1 {
     text-align: center;
+    color: #003d80;
 }
 
 /* Contenuto centrato */
-body > * {
-    max-width: 800px;
-    margin: auto;
-    padding: 10px;
+p, ul, input, select, button {
+    display: block;
+    margin: 15px auto;
+    max-width: 300px;
+    font-size: 16px;
 }
 
 /* Input */
-input {
-    width: 90%;
+input, select {
     padding: 10px;
-    margin: 8px 0;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+    width: 100%;
+    border: 2px solid #0056b3;
+    border-radius: 5px;
 }
 
 /* Pulsanti */
 button {
-    background-color: #1e73be;
+    padding: 10px;
+    background-color: #0056b3;
     color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 5px;
 }
 
 button:hover {
-    background-color: #155a94;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    color: #666;
-    margin-top: 30px;
-    padding: 20px 0;
-    font-size: 14px;
+    background-color: #003d80;
 }
