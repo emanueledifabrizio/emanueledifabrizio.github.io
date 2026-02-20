@@ -1,65 +1,74 @@
-/* Impostazioni generali del sito */
+/* Font moderno */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    line-height: 1.6;
-    background-color: #fafafa;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f5f7fa;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-/* Menu di navigazione */
+/* Menu */
 nav {
-    background-color: #f0f0f0;
+    background-color: #1e73be;
     padding: 12px;
-    border-radius: 6px;
-    margin-bottom: 20px;
+    text-align: center;
 }
 
 nav a {
-    margin-right: 15px;
-    font-weight: bold;
+    color: white;
     text-decoration: none;
-    color: #333;
+    margin: 0 15px;
+    font-weight: bold;
 }
 
 nav a:hover {
-    color: #0078ff;
-}
-
-/* Linea di separazione */
-hr {
-    border: none;
-    border-top: 1px solid #ccc;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    text-decoration: underline;
 }
 
 /* Titoli */
 h1, h2 {
-    color: #222;
+    color: #1e73be;
+    text-align: center;
 }
 
-/* Liste */
-ul {
-    padding-left: 20px;
+/* Contenuto centrato */
+body > * {
+    max-width: 800px;
+    margin: auto;
+    padding: 10px;
 }
 
-ul li {
-    margin-bottom: 8px;
+/* Input */
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
 }
 
-a {
-    color: #0078ff;
+/* Pulsanti */
+button {
+    background-color: #1e73be;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px;
 }
 
-a:hover {
-    text-decoration: underline;
+button:hover {
+    background-color: #155a94;
 }
+
+/* Footer */
 footer {
     text-align: center;
-    margin-top: 40px;
     color: #666;
+    margin-top: 30px;
+    padding: 20px 0;
     font-size: 14px;
 }
