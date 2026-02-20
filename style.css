@@ -30,3 +30,20 @@ button {
 button:hover {
     background-color: #004999;
 }
+nav {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+}
