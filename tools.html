@@ -11,7 +11,8 @@
 <nav>
     <span class="logo">🛠️ ED Tools</span> | 
     <a href="index.html">Home</a> | 
-    <a href="tools.html">Tool</a>
+    <a href="tools.html">Tool</a> |
+    <button id="darkToggle">🌙</button>
 </nav>
 
 <h1>Strumenti disponibili</h1>
@@ -21,6 +22,13 @@
     <li><a href="convertitore-euro-lira.html">Convertitore Euro ↔ Lira</a></li>
     <li><a href="calcolatore-percentuale.html">Calcolatore Percentuale</a></li>
 </ul>
+
+<script>
+document.getElementById("darkToggle").onclick = function() {
+    document.body.classList.toggle("dark-mode");
+    this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+};
+</script>
 
 </body>
 </html>
