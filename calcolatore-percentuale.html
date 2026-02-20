@@ -11,7 +11,8 @@
 <nav>
     <span class="logo">🛠️ ED Tools</span> | 
     <a href="index.html">Home</a> | 
-    <a href="tools.html">Tool</a>
+    <a href="tools.html">Tool</a> |
+    <button id="darkToggle">🌙</button>
 </nav>
 
 <h1>Calcolatore Percentuale</h1>
@@ -30,6 +31,11 @@ function calc() {
     let result = n * (p / 100);
     document.getElementById("result").innerText = "Risultato: " + result.toFixed(2);
 }
+
+document.getElementById("darkToggle").onclick = function() {
+    document.body.classList.toggle("dark-mode");
+    this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+};
 </script>
 
 </body>
