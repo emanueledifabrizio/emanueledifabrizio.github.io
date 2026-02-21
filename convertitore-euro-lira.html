@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convertitore Euro ↔ Lira</title>
+    <title>Convertitore Euro ↔ Lira - ED Tools</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,40 +12,45 @@
     <span class="logo">🛠️ ED Tools</span> | 
     <a href="index.html">Home</a> | 
     <a href="tools.html">Tool</a> | 
-    <a href="chi-sono.html">Chi sono</a> |
+    <a href="chi-sono.html">Chi sono</a> | 
+    <a href="contatti.html">Contatti</a> |
     <button id="darkToggle">🌙</button>
 </nav>
 
 <h1>Convertitore Euro ↔ Lira</h1>
 
-<input type="number" id="valueInput" placeholder="Inserisci valore">
+<div class="converter-box">
+    <input type="number" id="inputValue" placeholder="Inserisci valore">
 
-<select id="conversionType">
-    <option value="euroToLira">Euro → Lire</option>
-    <option value="liraToEuro">Lire → Euro</option>
-</select>
+    <select id="conversionType">
+        <option value="euroToLira">Euro → Lira</option>
+        <option value="liraToEuro">Lira → Euro</option>
+    </select>
 
-<button onclick="convert()">Converti</button>
+    <button onclick="convert()">Converti</button>
 
-<p id="result"></p>
+    <p id="result"></p>
+</div>
 
 <script>
 function convert() {
-    let value = parseFloat(document.getElementById("valueInput").value);
+    let value = parseFloat(document.getElementById("inputValue").value);
     let type = document.getElementById("conversionType").value;
-    let result = "";
 
     if (isNaN(value)) {
-        result = "Inserisci un numero valido.";
-    } else {
-        if (type === "euroToLira") {
-            result = (value * 1936.27).toFixed(2) + " Lire";
-        } else {
-            result = (value / 1936.27).toFixed(2) + " Euro";
-        }
+        document.getElementById("result").textContent = "Inserisci un valore valido.";
+        return;
     }
 
-    document.getElementById("result").textContent = result;
+    let result;
+
+    if (type === "euroToLira") {
+        result = value * 1936.27;
+        document.getElementById("result").textContent = value + " € = " + result.toFixed(2) + " Lire";
+    } else {
+        result = value / 1936.27;
+        document.getElementById("result").textContent = value + " Lire = " + result.toFixed(2) + " €";
+    }
 }
 
 document.getElementById("darkToggle").onclick = function() {
