@@ -11,14 +11,15 @@
 <nav>
     <span class="logo">🛠️ ED Tools</span> | 
     <a href="index.html">Home</a> | 
-    <a href="tools.html">Tool</a> |
+    <a href="tools.html">Tool</a> | 
+    <a href="chi-sono.html">Chi sono</a> |
     <button id="darkToggle">🌙</button>
 </nav>
 
-<h1>Convertitore di Temperatura</h1>
+<h1>Convertitore Temperatura</h1>
 
 <input type="number" id="tempInput" placeholder="Inserisci valore">
-<select id="tempType">
+<select id="scale">
     <option value="CtoF">Celsius → Fahrenheit</option>
     <option value="FtoC">Fahrenheit → Celsius</option>
 </select>
@@ -30,13 +31,20 @@
 <script>
 function convert() {
     let value = parseFloat(document.getElementById("tempInput").value);
-    let type = document.getElementById("tempType").value;
+    let scale = document.getElementById("scale").value;
     let result = "";
 
-    if (type === "CtoF") result = (value * 9/5) + 32;
-    else result = (value - 32) * 5/9;
+    if (isNaN(value)) {
+        result = "Inserisci un numero valido.";
+    } else {
+        if (scale === "CtoF") {
+            result = (value * 9/5 + 32).toFixed(2) + " °F";
+        } else {
+            result = ((value - 32) * 5/9).toFixed(2) + " °C";
+        }
+    }
 
-    document.getElementById("result").innerText = "Risultato: " + result.toFixed(2);
+    document.getElementById("result").textContent = result;
 }
 
 document.getElementById("darkToggle").onclick = function() {
