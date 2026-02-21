@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi sono - ED Tools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <span class="logo">🛠️ ED Tools</span> | 
+    <a href="index.html">Home</a> | 
+    <a href="tools.html">Tool</a> |
+    <a href="chi-sono.html">Chi sono</a> |
+    <button id="darkToggle">🌙</button>
+</nav>
+
+<h1>Chi sono</h1>
+
+<p style="text-align:center; max-width:600px;">
+    Ciao! Sono Emanuele, e questo è il mio progetto: <strong>ED Tools</strong>.<br><br>
+    Ho creato questo sito per raccogliere strumenti utili, semplici e veloci da usare,
+    tutti in un unico posto.  
+    Mi piace costruire cose pratiche, migliorare passo dopo passo e imparare mentre creo.
+</p>
+
+<p style="text-align:center; max-width:600px;">
+    Il sito è in continua evoluzione: aggiungo nuovi tool, miglioro la grafica e
+    rendo tutto più moderno e funzionale.  
+    Se ti piace quello che vedi, torna a trovarmi: ci saranno sempre novità!
+</p>
+
+<script>
+document.getElementById("darkToggle").onclick = function() {
+    document.body.classList.toggle("dark-mode");
+    this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+};
+</script>
+
+</body>
+</html>
