@@ -67,6 +67,7 @@ button {
 button:hover {
     background-color: #003d80;
 }
+
 /* Container delle card */
 .cards {
     display: grid;
@@ -101,7 +102,48 @@ button:hover {
     margin-bottom: 10px;
 }
 
-/* Dark mode per le card */
+/* Pulsante dark mode */
+#darkToggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+/* Tema scuro */
+.dark-mode {
+    background-color: #0d1117;
+    color: #e6e6e6;
+}
+
+.dark-mode nav {
+    background-color: #161b22;
+}
+
+.dark-mode nav a {
+    color: #58a6ff;
+}
+
+.dark-mode .logo {
+    color: #58a6ff;
+}
+
+.dark-mode input,
+.dark-mode select {
+    background-color: #161b22;
+    color: #e6e6e6;
+    border: 2px solid #58a6ff;
+}
+
+.dark-mode button {
+    background-color: #238636;
+}
+
+.dark-mode button:hover {
+    background-color: #2ea043;
+}
+
 .dark-mode .card {
     background-color: #161b22;
     border-color: #58a6ff;
