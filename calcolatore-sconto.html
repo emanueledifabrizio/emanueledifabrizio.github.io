@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calcolatore Sconto</title>
+    <title>Calcolatore Sconto - ED Tools</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,35 +12,37 @@
     <span class="logo">🛠️ ED Tools</span> | 
     <a href="index.html">Home</a> | 
     <a href="tools.html">Tool</a> | 
-    <a href="chi-sono.html">Chi sono</a> |
+    <a href="chi-sono.html">Chi sono</a> | 
+    <a href="contatti.html">Contatti</a> |
     <button id="darkToggle">🌙</button>
 </nav>
 
 <h1>Calcolatore Sconto</h1>
 
-<input type="number" id="price" placeholder="Prezzo originale (es. 100)">
-<input type="number" id="discount" placeholder="Sconto % (es. 20)">
+<div class="converter-box">
+    <input type="number" id="prezzo" placeholder="Prezzo originale" required>
+    <input type="number" id="sconto" placeholder="Sconto (%)" required>
 
-<button onclick="calculateDiscount()">Calcola</button>
+    <button onclick="calcolaSconto()">Calcola</button>
 
-<p id="result"></p>
+    <p id="result"></p>
+</div>
 
 <script>
-function calculateDiscount() {
-    let price = parseFloat(document.getElementById("price").value);
-    let discount = parseFloat(document.getElementById("discount").value);
-    let result = "";
+function calcolaSconto() {
+    let prezzo = parseFloat(document.getElementById("prezzo").value);
+    let sconto = parseFloat(document.getElementById("sconto").value);
 
-    if (isNaN(price) || isNaN(discount)) {
-        result = "Inserisci numeri validi.";
-    } else {
-        let discountValue = (price * discount / 100).toFixed(2);
-        let finalPrice = (price - discountValue).toFixed(2);
-
-        result = "Sconto: " + discountValue + " € — Prezzo finale: " + finalPrice + " €";
+    if (isNaN(prezzo) || isNaN(sconto)) {
+        document.getElementById("result").textContent = "Inserisci valori validi.";
+        return;
     }
 
-    document.getElementById("result").textContent = result;
+    let importoSconto = (prezzo * sconto) / 100;
+    let prezzoFinale = prezzo - importoSconto;
+
+    document.getElementById("result").textContent =
+        "Sconto: " + importoSconto.toFixed(2) + " € — Prezzo finale: " + prezzoFinale.toFixed(2) + " €";
 }
 
 document.getElementById("darkToggle").onclick = function() {
