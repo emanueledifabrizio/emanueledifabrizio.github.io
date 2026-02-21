@@ -11,25 +11,33 @@
 <nav>
     <span class="logo">🛠️ ED Tools</span> | 
     <a href="index.html">Home</a> | 
-    <a href="tools.html">Tool</a> |
+    <a href="tools.html">Tool</a> | 
+    <a href="chi-sono.html">Chi sono</a> |
     <button id="darkToggle">🌙</button>
 </nav>
 
 <h1>Calcolatore Percentuale</h1>
 
-<input type="number" id="num" placeholder="Numero">
-<input type="number" id="perc" placeholder="Percentuale">
+<input type="number" id="value" placeholder="Valore (es. 200)">
+<input type="number" id="percent" placeholder="Percentuale (es. 15)">
 
-<button onclick="calc()">Calcola</button>
+<button onclick="calculate()">Calcola</button>
 
 <p id="result"></p>
 
 <script>
-function calc() {
-    let n = parseFloat(document.getElementById("num").value);
-    let p = parseFloat(document.getElementById("perc").value);
-    let result = n * (p / 100);
-    document.getElementById("result").innerText = "Risultato: " + result.toFixed(2);
+function calculate() {
+    let value = parseFloat(document.getElementById("value").value);
+    let percent = parseFloat(document.getElementById("percent").value);
+    let result = "";
+
+    if (isNaN(value) || isNaN(percent)) {
+        result = "Inserisci numeri validi.";
+    } else {
+        result = ((value * percent) / 100).toFixed(2) + " è il " + percent + "% di " + value;
+    }
+
+    document.getElementById("result").textContent = result;
 }
 
 document.getElementById("darkToggle").onclick = function() {
