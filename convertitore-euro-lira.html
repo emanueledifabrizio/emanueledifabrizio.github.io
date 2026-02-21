@@ -11,16 +11,18 @@
 <nav>
     <span class="logo">🛠️ ED Tools</span> | 
     <a href="index.html">Home</a> | 
-    <a href="tools.html">Tool</a> |
+    <a href="tools.html">Tool</a> | 
+    <a href="chi-sono.html">Chi sono</a> |
     <button id="darkToggle">🌙</button>
 </nav>
 
 <h1>Convertitore Euro ↔ Lira</h1>
 
-<input type="number" id="moneyInput" placeholder="Inserisci valore">
-<select id="moneyType">
-    <option value="EtoL">Euro → Lire</option>
-    <option value="LtoE">Lire → Euro</option>
+<input type="number" id="valueInput" placeholder="Inserisci valore">
+
+<select id="conversionType">
+    <option value="euroToLira">Euro → Lire</option>
+    <option value="liraToEuro">Lire → Euro</option>
 </select>
 
 <button onclick="convert()">Converti</button>
@@ -29,14 +31,21 @@
 
 <script>
 function convert() {
-    let value = parseFloat(document.getElementById("moneyInput").value);
-    let type = document.getElementById("moneyType").value;
+    let value = parseFloat(document.getElementById("valueInput").value);
+    let type = document.getElementById("conversionType").value;
     let result = "";
 
-    if (type === "EtoL") result = value * 1936.27;
-    else result = value / 1936.27;
+    if (isNaN(value)) {
+        result = "Inserisci un numero valido.";
+    } else {
+        if (type === "euroToLira") {
+            result = (value * 1936.27).toFixed(2) + " Lire";
+        } else {
+            result = (value / 1936.27).toFixed(2) + " Euro";
+        }
+    }
 
-    document.getElementById("result").innerText = "Risultato: " + result.toFixed(2);
+    document.getElementById("result").textContent = result;
 }
 
 document.getElementById("darkToggle").onclick = function() {
