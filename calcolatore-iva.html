@@ -11,38 +11,36 @@
 <nav>
     <span class="logo">🛠️ ED Tools</span> | 
     <a href="index.html">Home</a> | 
-    <a href="tools.html">Tool</a> |
+    <a href="tools.html">Tool</a> | 
+    <a href="chi-sono.html">Chi sono</a> |
     <button id="darkToggle">🌙</button>
 </nav>
 
 <h1>Calcolatore IVA</h1>
 
-<input type="number" id="prezzo" placeholder="Prezzo senza IVA">
-<select id="iva">
-    <option value="22">IVA 22%</option>
-    <option value="10">IVA 10%</option>
-    <option value="4">IVA 4%</option>
-</select>
+<input type="number" id="amount" placeholder="Importo (es. 100)">
+<input type="number" id="iva" placeholder="IVA % (es. 22)">
 
-<button onclick="calcolaIVA()">Calcola</button>
+<button onclick="calculateIVA()">Calcola</button>
 
 <p id="result"></p>
 
 <script>
-function calcolaIVA() {
-    let prezzo = parseFloat(document.getElementById("prezzo").value);
+function calculateIVA() {
+    let amount = parseFloat(document.getElementById("amount").value);
     let iva = parseFloat(document.getElementById("iva").value);
+    let result = "";
 
-    if (isNaN(prezzo)) {
-        document.getElementById("result").innerText = "Inserisci un valore valido.";
-        return;
+    if (isNaN(amount) || isNaN(iva)) {
+        result = "Inserisci numeri validi.";
+    } else {
+        let ivaValue = (amount * iva / 100).toFixed(2);
+        let total = (amount + parseFloat(ivaValue)).toFixed(2);
+
+        result = "IVA: " + ivaValue + " € — Totale: " + total + " €";
     }
 
-    let ivaCalcolata = prezzo * (iva / 100);
-    let totale = prezzo + ivaCalcolata;
-
-    document.getElementById("result").innerText =
-        "IVA: " + ivaCalcolata.toFixed(2) + " €\nTotale: " + totale.toFixed(2) + " €";
+    document.getElementById("result").textContent = result;
 }
 
 document.getElementById("darkToggle").onclick = function() {
