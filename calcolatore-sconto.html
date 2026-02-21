@@ -1,54 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>Calcolatore di Sconto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore Sconto</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <nav>
-        <a href="index.html">Home</a> |
-        <a href="tools.html">Tool</a>
-    </nav>
-    <hr>
 
-    <h1>Calcolatore di Sconto (%)</h1>
+<nav>
+    <span class="logo">🛠️ ED Tools</span> | 
+    <a href="index.html">Home</a> | 
+    <a href="tools.html">Tool</a> | 
+    <a href="chi-sono.html">Chi sono</a> |
+    <button id="darkToggle">🌙</button>
+</nav>
 
-    <p>
-        Inserisci il prezzo originale e la percentuale di sconto per calcolare il prezzo finale
-        e quanto risparmi.
-    </p>
+<h1>Calcolatore Sconto</h1>
 
-    <h2>Calcola lo sconto</h2>
+<input type="number" id="price" placeholder="Prezzo originale (es. 100)">
+<input type="number" id="discount" placeholder="Sconto % (es. 20)">
 
-    <input type="number" id="prezzo" placeholder="Prezzo originale (es. 100)">
-    <input type="number" id="sconto" placeholder="Sconto % (es. 20)">
-    <button onclick="calcolaSconto()">Calcola</button>
+<button onclick="calculateDiscount()">Calcola</button>
 
-    <p id="risultato"></p>
+<p id="result"></p>
 
-    <script>
-        function calcolaSconto() {
-            let prezzo = document.getElementById("prezzo").value;
-            let sconto = document.getElementById("sconto").value;
+<script>
+function calculateDiscount() {
+    let price = parseFloat(document.getElementById("price").value);
+    let discount = parseFloat(document.getElementById("discount").value);
+    let result = "";
 
-            if (prezzo === "" || sconto === "") {
-                document.getElementById("risultato").innerText = "Inserisci entrambi i valori.";
-                return;
-            }
+    if (isNaN(price) || isNaN(discount)) {
+        result = "Inserisci numeri validi.";
+    } else {
+        let discountValue = (price * discount / 100).toFixed(2);
+        let finalPrice = (price - discountValue).toFixed(2);
 
-            let risparmio = (prezzo * sconto) / 100;
-            let finale = prezzo - risparmio;
+        result = "Sconto: " + discountValue + " € — Prezzo finale: " + finalPrice + " €";
+    }
 
-            document.getElementById("risultato").innerText =
-                "Risparmi: " + risparmio.toFixed(2) + " € — Prezzo finale: " + finale.toFixed(2) + " €";
-        }
-    </script>
+    document.getElementById("result").textContent = result;
+}
 
-    <footer>
-        <hr>
-        <p>© 2026 Emanuele – Sito creato passo dopo passo mentre imparo lo sviluppo web.</p>
-    </footer>
+document.getElementById("darkToggle").onclick = function() {
+    document.body.classList.toggle("dark-mode");
+    this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+};
+</script>
+
 </body>
 </html>
