@@ -11,18 +11,41 @@
 <nav>
     <span class="logo">🛠️ ED Tools</span> | 
     <a href="index.html">Home</a> | 
-    <a href="tools.html">Tool</a> |
+    <a href="tools.html">Tool</a> | 
+    <a href="chi-sono.html">Chi sono</a> |
     <button id="darkToggle">🌙</button>
 </nav>
 
 <h1>Strumenti disponibili</h1>
 
-<ul>
-    <li><a href="convertitore-temperatura.html">Convertitore di Temperatura</a></li>
-    <li><a href="convertitore-euro-lira.html">Convertitore Euro ↔ Lira</a></li>
-    <li><a href="calcolatore-percentuale.html">Calcolatore Percentuale</a></li>
-    <li><a href="calcolatore-iva.html">Calcolatore IVA</a></li>
-</ul>
+<div class="cards">
+
+    <a class="card" href="convertitore-temperatura.html">
+        <div class="icon">🔥</div>
+        <div class="title">Convertitore Temperatura</div>
+    </a>
+
+    <a class="card" href="convertitore-euro-lira.html">
+        <div class="icon">💶</div>
+        <div class="title">Convertitore Euro ↔ Lira</div>
+    </a>
+
+    <a class="card" href="calcolatore-percentuale.html">
+        <div class="icon">📊</div>
+        <div class="title">Calcolatore Percentuale</div>
+    </a>
+
+    <a class="card" href="calcolatore-iva.html">
+        <div class="icon">🧾</div>
+        <div class="title">Calcolatore IVA</div>
+    </a>
+
+    <a class="card" href="calcolatore-sconto.html">
+        <div class="icon">🏷️</div>
+        <div class="title">Calcolatore Sconto</div>
+    </a>
+
+</div>
 
 <script>
 document.getElementById("darkToggle").onclick = function() {
