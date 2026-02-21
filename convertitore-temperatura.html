@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convertitore Temperatura</title>
+    <title>Convertitore Temperatura - ED Tools</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,39 +12,56 @@
     <span class="logo">🛠️ ED Tools</span> | 
     <a href="index.html">Home</a> | 
     <a href="tools.html">Tool</a> | 
-    <a href="chi-sono.html">Chi sono</a> |
+    <a href="chi-sono.html">Chi sono</a> | 
+    <a href="contatti.html">Contatti</a> |
     <button id="darkToggle">🌙</button>
 </nav>
 
-<h1>Convertitore Temperatura</h1>
+<h1>Convertitore di Temperatura</h1>
 
-<input type="number" id="tempInput" placeholder="Inserisci valore">
-<select id="scale">
-    <option value="CtoF">Celsius → Fahrenheit</option>
-    <option value="FtoC">Fahrenheit → Celsius</option>
-</select>
+<div class="converter-box">
+    <input type="number" id="inputTemp" placeholder="Inserisci valore">
+    <select id="fromUnit">
+        <option value="C">Celsius (°C)</option>
+        <option value="F">Fahrenheit (°F)</option>
+        <option value="K">Kelvin (K)</option>
+    </select>
 
-<button onclick="convert()">Converti</button>
+    <select id="toUnit">
+        <option value="C">Celsius (°C)</option>
+        <option value="F">Fahrenheit (°F)</option>
+        <option value="K">Kelvin (K)</option>
+    </select>
 
-<p id="result"></p>
+    <button onclick="convertTemp()">Converti</button>
+
+    <p id="result"></p>
+</div>
 
 <script>
-function convert() {
-    let value = parseFloat(document.getElementById("tempInput").value);
-    let scale = document.getElementById("scale").value;
-    let result = "";
+function convertTemp() {
+    let value = parseFloat(document.getElementById("inputTemp").value);
+    let from = document.getElementById("fromUnit").value;
+    let to = document.getElementById("toUnit").value;
 
     if (isNaN(value)) {
-        result = "Inserisci un numero valido.";
-    } else {
-        if (scale === "CtoF") {
-            result = (value * 9/5 + 32).toFixed(2) + " °F";
-        } else {
-            result = ((value - 32) * 5/9).toFixed(2) + " °C";
-        }
+        document.getElementById("result").textContent = "Inserisci un valore valido.";
+        return;
     }
 
-    document.getElementById("result").textContent = result;
+    let tempC;
+
+    if (from === "C") tempC = value;
+    if (from === "F") tempC = (value - 32) * 5/9;
+    if (from === "K") tempC = value - 273.15;
+
+    let final;
+
+    if (to === "C") final = tempC;
+    if (to === "F") final = (tempC * 9/5) + 32;
+    if (to === "K") final = tempC + 273.15;
+
+    document.getElementById("result").textContent = "Risultato: " + final.toFixed(2);
 }
 
 document.getElementById("darkToggle").onclick = function() {
