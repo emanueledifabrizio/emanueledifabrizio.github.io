@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novità - ED Tools</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="logo">E</span>
+        <span class="brand">ED Tools</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tools.html">Tool</a>
+        <a href="novita.html" class="active">Novità</a>
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+
+    <button id="darkToggle" class="dark-btn">🌙</button>
+</nav>
+
+<header class="hero">
+    <h1>Novità</h1>
+    <p>Tutti gli aggiornamenti e le nuove funzionalità di ED Tools.</p>
+</header>
+
+<section class="tool-container">
+    <div class="tool-box" style="text-align:left;">
+
+        <h2>🆕 Febbraio 2025</h2>
+        <ul>
+            <li>Aggiunto il nuovo <strong>Generatore di Password Sicure</strong></li>
+            <li>Creata la nuova pagina <strong>Novità</strong></li>
+            <li>Completata la riscrittura totale del sito in stile moderno</li>
+            <li>Aggiunta dark mode migliorata</li>
+        </ul>
+
+        <h2>📅 Aggiornamenti futuri</h2>
+        <ul>
+            <li>Nuovi tool in arrivo</li>
+            <li>Possibile aggiunta di animazioni leggere</li>
+            <li>Ottimizzazioni grafiche</li>
+        </ul>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 ED Tools — Creato da Emanuele</p>
+</footer>
+
+<script>
+document.getElementById("darkToggle").onclick = function() {
+    document.body.classList.toggle("dark-mode");
+    this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+};
+</script>
+
+</body>
+</html>
