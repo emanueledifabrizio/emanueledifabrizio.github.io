@@ -4,36 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatti - ED Tools</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Stile globale -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-    <span class="logo">🛠️ ED Tools</span> | 
-    <a href="index.html">Home</a> | 
-    <a href="tools.html">Tool</a> | 
-    <a href="chi-sono.html">Chi sono</a> |
-    <a href="contatti.html">Contatti</a> |
-    <button id="darkToggle">🌙</button>
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="logo">E</span>
+        <span class="brand">ED Tools</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tools.html">Tool</a>
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="contatti.html" class="active">Contatti</a>
+    </div>
+
+    <button id="darkToggle" class="dark-btn">🌙</button>
 </nav>
 
-<h1>Contattami</h1>
+<header class="hero">
+    <h1>Contattami</h1>
+    <p>Hai domande, suggerimenti o richieste? Scrivimi qui sotto.</p>
+</header>
 
-<p style="text-align:center; max-width:600px;">
-    Hai domande, suggerimenti o vuoi segnalare un problema?  
-    Compila il form qui sotto e ti risponderò il prima possibile.
-</p>
+<section class="tool-container">
 
-<form action="https://formspree.io/f/xpqjylpw" method="POST">
+    <div class="tool-box">
+        <form action="https://formspree.io/f/tuo-endpoint" method="POST">
 
+            <label>Nome:</label>
+            <input type="text" name="nome" required placeholder="Il tuo nome">
 
-    <input type="text" name="nome" placeholder="Il tuo nome" required>
-    <input type="email" name="email" placeholder="La tua email" required>
-    <textarea name="messaggio" placeholder="Il tuo messaggio" required></textarea>
+            <label>Email:</label>
+            <input type="email" name="email" required placeholder="La tua email">
 
-    <button type="submit">Invia</button>
+            <label>Messaggio:</label>
+            <textarea name="messaggio" rows="5" required placeholder="Scrivi il tuo messaggio"></textarea>
 
-</form>
+            <button type="submit">Invia</button>
+        </form>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2025 ED Tools — Creato da Emanuele</p>
+</footer>
 
 <script>
 document.getElementById("darkToggle").onclick = function() {
