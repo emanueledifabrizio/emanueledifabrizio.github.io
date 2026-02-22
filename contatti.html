@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatti - ED Tools</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
-
-    <!-- Stile globale -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,6 +19,8 @@
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="tools.html">Tool</a>
+        <a href="novita.html">Novità</a>
+        <a href="faq.html">FAQ</a>
         <a href="chi-sono.html">Chi sono</a>
         <a href="contatti.html" class="active">Contatti</a>
     </div>
@@ -30,28 +29,32 @@
 </nav>
 
 <header class="hero">
-    <h1>Contattami</h1>
-    <p>Hai domande, suggerimenti o richieste? Scrivimi qui sotto.</p>
+    <h1>Contatti</h1>
+    <p>Hai domande, suggerimenti o vuoi segnalare un problema? Scrivimi qui.</p>
 </header>
 
 <section class="tool-container">
+    <div class="tool-box" style="text-align:left;">
 
-    <div class="tool-box">
-        <form action="https://formspree.io/f/tuo-endpoint" method="POST">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
             <label>Nome:</label>
-            <input type="text" name="nome" required placeholder="Il tuo nome">
+            <input type="text" name="nome" required>
 
             <label>Email:</label>
-            <input type="email" name="email" required placeholder="La tua email">
+            <input type="email" name="email" required>
 
             <label>Messaggio:</label>
-            <textarea name="messaggio" rows="5" required placeholder="Scrivi il tuo messaggio"></textarea>
+            <textarea name="messaggio" rows="5" required></textarea>
 
             <button type="submit">Invia</button>
         </form>
-    </div>
 
+        <p style="margin-top:20px; font-size:14px; opacity:0.8;">
+            Risponderò il prima possibile.
+        </p>
+
+    </div>
 </section>
 
 <footer>
