@@ -3,36 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatti - ED Tools</title>
+    <title>Chi sono - ED Tools</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Stile globale -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-    <span class="logo">🛠️ ED Tools</span> | 
-    <a href="index.html">Home</a> | 
-    <a href="tools.html">Tool</a> | 
-    <a href="chi-sono.html">Chi sono</a> | 
-    <a href="contatti.html">Contatti</a> |
-    <button id="darkToggle">🌙</button>
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="logo">E</span>
+        <span class="brand">ED Tools</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tools.html">Tool</a>
+        <a href="chi-sono.html" class="active">Chi sono</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+
+    <button id="darkToggle" class="dark-btn">🌙</button>
 </nav>
 
-<h1>Contattami</h1>
+<header class="hero">
+    <h1>Chi sono</h1>
+    <p>Una breve presentazione per conoscerci meglio.</p>
+</header>
 
-<p style="text-align:center; max-width:600px;">
-    Hai domande, suggerimenti o vuoi segnalare un problema?  
-    Compila il form qui sotto e ti risponderò il prima possibile.
-</p>
+<section class="tool-container">
 
-<form action="https://formspree.io/f/mayvjqzv" method="POST" class="contact-form">
+    <div class="tool-box" style="text-align: left;">
+        <h2>Ciao, sono Emanuele 👋</h2>
+        <p>
+            Sono una persona curiosa, appassionata di tecnologia e sempre alla ricerca di modi per semplificare la vita quotidiana.
+            ED Tools nasce proprio da questa idea: creare strumenti utili, veloci e intuitivi che chiunque possa usare.
+        </p>
 
-    <input type="text" name="nome" placeholder="Il tuo nome" required>
-    <input type="email" name="email" placeholder="La tua email" required>
-    <textarea name="messaggio" placeholder="Il tuo messaggio" required></textarea>
+        <p>
+            Mi piace costruire progetti pratici, migliorare passo dopo passo e condividere ciò che imparo.
+            Questo sito è un piccolo spazio dove raccolgo i miei tool, e continuerà a crescere nel tempo.
+        </p>
 
-    <button type="submit">Invia</button>
+        <h3>Cosa troverai qui</h3>
+        <ul>
+            <li>Strumenti semplici e immediati</li>
+            <li>Design pulito e moderno</li>
+            <li>Funzionalità utili per la vita di tutti i giorni</li>
+            <li>Aggiornamenti continui e nuove idee</li>
+        </ul>
 
-</form>
+        <p>
+            Se hai suggerimenti o vuoi collaborare, passa dalla pagina <a href="contatti.html">Contatti</a>.
+        </p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2025 ED Tools — Creato da Emanuele</p>
+</footer>
 
 <script>
 document.getElementById("darkToggle").onclick = function() {
