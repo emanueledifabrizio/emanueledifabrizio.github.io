@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ED Tools - Tutti gli strumenti</title>
+    <title>Calcolatore Percentuale - ED Tools</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
-
-    <!-- Stile globale -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,7 +18,9 @@
 
     <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="tools.html" class="active">Tool</a>
+        <a href="tools.html">Tool</a>
+        <a href="novita.html">Novità</a>
+        <a href="faq.html">FAQ</a>
         <a href="chi-sono.html">Chi sono</a>
         <a href="contatti.html">Contatti</a>
     </div>
@@ -30,16 +29,23 @@
 </nav>
 
 <header class="hero">
-    <h1>I tuoi strumenti</h1>
-    <p>Una raccolta completa di tool utili, veloci e intuitivi.</p>
+    <h1>Calcolatore Percentuale</h1>
+    <p>Calcola percentuali in modo semplice e veloce.</p>
 </header>
 
-<section class="tool-grid">
-    <a class="tool-card" href="convertitore-temperatura.html">🔥 Convertitore Temperatura</a>
-    <a class="tool-card" href="convertitore-euro-lira.html">💶 Convertitore Euro ↔ Lira</a>
-    <a class="tool-card" href="calcolatore-percentuale.html">📊 Calcolatore Percentuale</a>
-    <a class="tool-card" href="calcolatore-iva.html">🧾 Calcolatore IVA</a>
-    <a class="tool-card" href="calcolatore-sconto.html">🏷️ Calcolatore Sconto</a>
+<section class="tool-container">
+    <div class="tool-box">
+
+        <label>Valore totale:</label>
+        <input type="number" id="totale" placeholder="Inserisci totale">
+
+        <label>Percentuale (%):</label>
+        <input type="number" id="percentuale" placeholder="Inserisci percentuale">
+
+        <button onclick="calcolaPercentuale()">Calcola</button>
+
+        <div id="risultato" class="result-box"></div>
+    </div>
 </section>
 
 <footer>
@@ -47,6 +53,22 @@
 </footer>
 
 <script>
+function calcolaPercentuale() {
+    const totale = parseFloat(document.getElementById("totale").value);
+    const percentuale = parseFloat(document.getElementById("percentuale").value);
+
+    if (isNaN(totale) || isNaN(percentuale)) {
+        document.getElementById("risultato").innerHTML = "<p>Inserisci valori validi.</p>";
+        return;
+    }
+
+    const risultato = totale * (percentuale / 100);
+
+    document.getElementById("risultato").innerHTML = `
+        <p><strong>Risultato:</strong> ${percentuale}% di ${totale} è <strong>${risultato.toFixed(2)}</strong></p>
+    `;
+}
+
 document.getElementById("darkToggle").onclick = function() {
     document.body.classList.toggle("dark-mode");
     this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
