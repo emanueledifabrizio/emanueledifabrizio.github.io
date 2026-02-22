@@ -4,45 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcolatore Sconto - ED Tools</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Stile globale -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-    <span class="logo">🛠️ ED Tools</span> | 
-    <a href="index.html">Home</a> | 
-    <a href="tools.html">Tool</a> | 
-    <a href="chi-sono.html">Chi sono</a> | 
-    <a href="contatti.html">Contatti</a> |
-    <button id="darkToggle">🌙</button>
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="logo">E</span>
+        <span class="brand">ED Tools</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tools.html">Tool</a>
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+
+    <button id="darkToggle" class="dark-btn">🌙</button>
 </nav>
 
-<h1>Calcolatore Sconto</h1>
+<header class="hero">
+    <h1>Calcolatore Sconto</h1>
+    <p>Calcola rapidamente il prezzo scontato e il risparmio.</p>
+</header>
 
-<div class="converter-box">
-    <input type="number" id="prezzo" placeholder="Prezzo originale" required>
-    <input type="number" id="sconto" placeholder="Sconto (%)" required>
+<section class="tool-container">
 
-    <button onclick="calcolaSconto()">Calcola</button>
+    <div class="tool-box">
+        <label>Prezzo originale (€):</label>
+        <input type="number" id="prezzo" placeholder="Inserisci prezzo">
 
-    <p id="result"></p>
-</div>
+        <label>Sconto (%):</label>
+        <input type="number" id="sconto" placeholder="Inserisci percentuale">
+
+        <button onclick="calcolaSconto()">Calcola</button>
+
+        <div id="risultato" class="result-box"></div>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2025 ED Tools — Creato da Emanuele</p>
+</footer>
 
 <script>
 function calcolaSconto() {
-    let prezzo = parseFloat(document.getElementById("prezzo").value);
-    let sconto = parseFloat(document.getElementById("sconto").value);
+    const prezzo = parseFloat(document.getElementById("prezzo").value);
+    const sconto = parseFloat(document.getElementById("sconto").value);
 
     if (isNaN(prezzo) || isNaN(sconto)) {
-        document.getElementById("result").textContent = "Inserisci valori validi.";
+        document.getElementById("risultato").innerHTML = "<p>Inserisci valori validi.</p>";
         return;
     }
 
-    let importoSconto = (prezzo * sconto) / 100;
-    let prezzoFinale = prezzo - importoSconto;
+    const risparmio = prezzo * (sconto / 100);
+    const finale = prezzo - risparmio;
 
-    document.getElementById("result").textContent =
-        "Sconto: " + importoSconto.toFixed(2) + " € — Prezzo finale: " + prezzoFinale.toFixed(2) + " €";
+    document.getElementById("risultato").innerHTML = `
+        <p><strong>Risparmio:</strong> € ${risparmio.toFixed(2)}</p>
+        <p><strong>Prezzo finale:</strong> € ${finale.toFixed(2)}</p>
+    `;
 }
 
 document.getElementById("darkToggle").onclick = function() {
