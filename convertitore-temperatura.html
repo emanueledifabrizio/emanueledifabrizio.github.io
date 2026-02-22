@@ -4,64 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convertitore Temperatura - ED Tools</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Stile globale -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-    <span class="logo">🛠️ ED Tools</span> | 
-    <a href="index.html">Home</a> | 
-    <a href="tools.html">Tool</a> | 
-    <a href="chi-sono.html">Chi sono</a> | 
-    <a href="contatti.html">Contatti</a> |
-    <button id="darkToggle">🌙</button>
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="logo">E</span>
+        <span class="brand">ED Tools</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tools.html">Tool</a>
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+
+    <button id="darkToggle" class="dark-btn">🌙</button>
 </nav>
 
-<h1>Convertitore di Temperatura</h1>
+<header class="hero">
+    <h1>Convertitore di Temperatura</h1>
+    <p>Converti facilmente tra Celsius, Fahrenheit e Kelvin.</p>
+</header>
 
-<div class="converter-box">
-    <input type="number" id="inputTemp" placeholder="Inserisci valore">
-    <select id="fromUnit">
-        <option value="C">Celsius (°C)</option>
-        <option value="F">Fahrenheit (°F)</option>
-        <option value="K">Kelvin (K)</option>
-    </select>
+<section class="tool-container">
 
-    <select id="toUnit">
-        <option value="C">Celsius (°C)</option>
-        <option value="F">Fahrenheit (°F)</option>
-        <option value="K">Kelvin (K)</option>
-    </select>
+    <div class="tool-box">
+        <label>Valore da convertire:</label>
+        <input type="number" id="valore" placeholder="Inserisci temperatura">
 
-    <button onclick="convertTemp()">Converti</button>
+        <label>Unità di partenza:</label>
+        <select id="da">
+            <option value="C">Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+        </select>
 
-    <p id="result"></p>
-</div>
+        <label>Unità di arrivo:</label>
+        <select id="a">
+            <option value="C">Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+        </select>
+
+        <button onclick="converti()">Converti</button>
+
+        <div id="risultato" class="result-box"></div>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2025 ED Tools — Creato da Emanuele</p>
+</footer>
 
 <script>
-function convertTemp() {
-    let value = parseFloat(document.getElementById("inputTemp").value);
-    let from = document.getElementById("fromUnit").value;
-    let to = document.getElementById("toUnit").value;
+function converti() {
+    const valore = parseFloat(document.getElementById("valore").value);
+    const da = document.getElementById("da").value;
+    const a = document.getElementById("a").value;
 
-    if (isNaN(value)) {
-        document.getElementById("result").textContent = "Inserisci un valore valido.";
+    if (isNaN(valore)) {
+        document.getElementById("risultato").innerHTML = "<p>Inserisci un valore valido.</p>";
         return;
     }
 
-    let tempC;
+    let celsius;
 
-    if (from === "C") tempC = value;
-    if (from === "F") tempC = (value - 32) * 5/9;
-    if (from === "K") tempC = value - 273.15;
+    // Conversione verso Celsius
+    if (da === "C") celsius = valore;
+    if (da === "F") celsius = (valore - 32) * 5/9;
+    if (da === "K") celsius = valore - 273.15;
 
-    let final;
+    let risultato;
 
-    if (to === "C") final = tempC;
-    if (to === "F") final = (tempC * 9/5) + 32;
-    if (to === "K") final = tempC + 273.15;
+    // Conversione da Celsius all'unità scelta
+    if (a === "C") risultato = celsius;
+    if (a === "F") risultato = (celsius * 9/5) + 32;
+    if (a === "K") risultato = celsius + 273.15;
 
-    document.getElementById("result").textContent = "Risultato: " + final.toFixed(2);
+    document.getElementById("risultato").innerHTML = `
+        <p><strong>Risultato:</strong> ${risultato.toFixed(2)} °${a}</p>
+    `;
 }
 
 document.getElementById("darkToggle").onclick = function() {
