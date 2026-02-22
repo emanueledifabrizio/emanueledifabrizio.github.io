@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ & Supporto - ED Tools</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="logo">E</span>
+        <span class="brand">ED Tools</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tools.html">Tool</a>
+        <a href="novita.html">Novità</a>
+        <a href="faq.html" class="active">FAQ</a>
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+
+    <button id="darkToggle" class="dark-btn">🌙</button>
+</nav>
+
+<header class="hero">
+    <h1>FAQ & Supporto</h1>
+    <p>Le risposte alle domande più comuni e come ottenere aiuto.</p>
+</header>
+
+<section class="tool-container">
+    <div class="tool-box" style="text-align:left;">
+
+        <h2>❓ Domande Frequenti</h2>
+
+        <h3>Come funzionano i tool?</h3>
+        <p>
+            Ogni tool è progettato per essere semplice e immediato. Basta inserire i dati richiesti e premere il pulsante per ottenere il risultato.
+        </p>
+
+        <h3>Posso usare ED Tools da smartphone?</h3>
+        <p>
+            Certo! Tutto il sito è completamente responsive e funziona perfettamente anche da mobile.
+        </p>
+
+        <h3>Devo registrarmi per usare i tool?</h3>
+        <p>
+            No, ED Tools è completamente gratuito e non richiede alcuna registrazione.
+        </p>
+
+        <h3>Come vengono salvati i miei dati?</h3>
+        <p>
+            Nessun dato viene salvato. Tutti i calcoli avvengono direttamente nel tuo browser.
+        </p>
+
+        <h3>Posso suggerire un nuovo tool?</h3>
+        <p>
+            Assolutamente sì! Puoi contattarmi tramite la pagina <a href="contatti.html">Contatti</a>.
+        </p>
+
+        <br>
+
+        <h2>🛠 Supporto</h2>
+        <p>
+            Se hai problemi, domande o vuoi segnalare un bug, puoi scrivermi direttamente dalla pagina
+            <a href="contatti.html">Contatti</a>.
+        </p>
+
+        <p>
+            Rispondo sempre il prima possibile.
+        </p>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 ED Tools — Creato da Emanuele</p>
+</footer>
+
+<script>
+document.getElementById("darkToggle").onclick = function() {
+    document.body.classList.toggle("dark-mode");
+    this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+};
+</script>
+
+</body>
+</html>
