@@ -3,48 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calcolatore IVA - ED Tools</title>
+    <title>ED Tools - Tutti gli strumenti</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Stile globale -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
-    <span class="logo">🛠️ ED Tools</span> | 
-    <a href="index.html">Home</a> | 
-    <a href="tools.html">Tool</a> | 
-    <a href="chi-sono.html">Chi sono</a> | 
-    <a href="contatti.html">Contatti</a> |
-    <button id="darkToggle">🌙</button>
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="logo">E</span>
+        <span class="brand">ED Tools</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tools.html" class="active">Tool</a>
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+
+    <button id="darkToggle" class="dark-btn">🌙</button>
 </nav>
 
-<h1>Calcolatore IVA</h1>
+<header class="hero">
+    <h1>I tuoi strumenti</h1>
+    <p>Una raccolta completa di tool utili, veloci e intuitivi.</p>
+</header>
 
-<div class="converter-box">
-    <input type="number" id="amount" placeholder="Importo" required>
-    <input type="number" id="iva" placeholder="IVA (%)" required>
+<section class="tool-grid">
+    <a class="tool-card" href="convertitore-temperatura.html">🔥 Convertitore Temperatura</a>
+    <a class="tool-card" href="convertitore-euro-lira.html">💶 Convertitore Euro ↔ Lira</a>
+    <a class="tool-card" href="calcolatore-percentuale.html">📊 Calcolatore Percentuale</a>
+    <a class="tool-card" href="calcolatore-iva.html">🧾 Calcolatore IVA</a>
+    <a class="tool-card" href="calcolatore-sconto.html">🏷️ Calcolatore Sconto</a>
+</section>
 
-    <button onclick="calculateIVA()">Calcola</button>
-
-    <p id="result"></p>
-</div>
+<footer>
+    <p>© 2025 ED Tools — Creato da Emanuele</p>
+</footer>
 
 <script>
-function calculateIVA() {
-    let amount = parseFloat(document.getElementById("amount").value);
-    let iva = parseFloat(document.getElementById("iva").value);
-
-    if (isNaN(amount) || isNaN(iva)) {
-        document.getElementById("result").textContent = "Inserisci valori validi.";
-        return;
-    }
-
-    let ivaAmount = (amount * iva) / 100;
-    let total = amount + ivaAmount;
-
-    document.getElementById("result").textContent =
-        "IVA: " + ivaAmount.toFixed(2) + " € — Totale: " + total.toFixed(2) + " €";
-}
-
 document.getElementById("darkToggle").onclick = function() {
     document.body.classList.toggle("dark-mode");
     this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
