@@ -4,67 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novità - ED Tools</title>
-
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
+
 <body>
 
-<nav class="navbar">
-    <div class="nav-left">
-        <span class="logo">E</span>
-        <span class="brand">ED Tools</span>
-    </div>
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="logo">E</span>
+            <span class="brand">ED Tools</span>
+        </div>
 
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="tools.html">Tool</a>
-        <a href="novita.html" class="active">Novità</a>
-        <a href="faq.html">FAQ</a>
-        <a href="chi-sono.html">Chi sono</a>
-        <a href="contatti.html">Contatti</a>
-    </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="tools.html">Tool</a>
+            <a href="novita.html" class="active">Novità</a>
+            <a href="faq.html">FAQ</a>
+            <a href="chi-sono.html">Chi sono</a>
+            <a href="contatti.html">Contatti</a>
+        </div>
 
-    <button id="darkToggle" class="dark-btn">🌙</button>
-</nav>
+        <button id="darkToggle" class="dark-btn">🌙</button>
+    </nav>
 
-<header class="hero">
-    <h1>Novità</h1>
-    <p>Tutti gli aggiornamenti e le nuove funzionalità di ED Tools.</p>
-</header>
+    <header class="hero">
+        <h1>Novità</h1>
+        <p>Tutti gli aggiornamenti e le nuove funzionalità di ED Tools.</p>
+    </header>
 
-<section class="tool-container">
-    <div class="tool-box" style="text-align:left;">
+    <section class="tool-container">
+        <h2>Ultimi aggiornamenti</h2>
 
-        <h2>🆕 Febbraio 2025</h2>
-        <ul>
-            <li>Aggiunto il nuovo <strong>Generatore di Password Sicure</strong></li>
-            <li>Creata la nuova pagina <strong>Novità</strong></li>
-            <li>Aggiunta la pagina <strong>FAQ & Supporto</strong></li>
-            <li>Navbar aggiornata e uniformata su tutto il sito</li>
-            <li>Dark mode migliorata</li>
-        </ul>
+        <div class="tool-card">
+            <h3>📌 Integrazione Google Analytics</h3>
+            <p>Ora ED Tools monitora il traffico in tempo reale per migliorare l’esperienza degli utenti.</p>
+        </div>
 
-        <h2>📅 Aggiornamenti futuri</h2>
-        <ul>
-            <li>Nuovi tool in arrivo</li>
-            <li>Possibile aggiunta di animazioni leggere</li>
-            <li>Ottimizzazioni grafiche</li>
-        </ul>
+        <div class="tool-card">
+            <h3>✨ Miglioramenti grafici</h3>
+            <p>Nuovi effetti, icone aggiornate e interfaccia più moderna e coerente.</p>
+        </div>
 
-    </div>
-</section>
+        <div class="tool-card">
+            <h3>🛠️ Nuovi strumenti in arrivo</h3>
+            <p>Stiamo lavorando a nuovi tool utili e intuitivi per ampliare la piattaforma.</p>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2025 ED Tools — Creato da Emanuele</p>
-</footer>
-
-<script>
-document.getElementById("darkToggle").onclick = function() {
-    document.body.classList.toggle("dark-mode");
-    this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-};
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
