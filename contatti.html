@@ -4,69 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contatti - ED Tools</title>
-
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
+
 <body>
 
-<nav class="navbar">
-    <div class="nav-left">
-        <span class="logo">E</span>
-        <span class="brand">ED Tools</span>
-    </div>
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="logo">E</span>
+            <span class="brand">ED Tools</span>
+        </div>
 
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="tools.html">Tool</a>
-        <a href="novita.html">Novità</a>
-        <a href="faq.html">FAQ</a>
-        <a href="chi-sono.html">Chi sono</a>
-        <a href="contatti.html" class="active">Contatti</a>
-    </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="tools.html">Tool</a>
+            <a href="novita.html">Novità</a>
+            <a href="faq.html">FAQ</a>
+            <a href="chi-sono.html">Chi sono</a>
+            <a href="contatti.html" class="active">Contatti</a>
+        </div>
 
-    <button id="darkToggle" class="dark-btn">🌙</button>
-</nav>
+        <button id="darkToggle" class="dark-btn">🌙</button>
+    </nav>
 
-<header class="hero">
-    <h1>Contatti</h1>
-    <p>Hai domande, suggerimenti o vuoi segnalare un problema? Scrivimi qui.</p>
-</header>
+    <header class="hero">
+        <h1>Contatti</h1>
+        <p>Hai domande, suggerimenti o vuoi segnalare un problema? Scrivimi liberamente.</p>
+    </header>
 
-<section class="tool-container">
-    <div class="tool-box" style="text-align:left;">
+    <section class="tool-container">
+        <div class="tool-card">
 
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <h2>Come posso aiutarti?</h2>
+            <p>Compila il modulo qui sotto oppure contattami direttamente via email.</p>
 
-            <label>Nome:</label>
-            <input type="text" name="nome" required>
+            <form class="contact-form" action="mailto:tuamail@example.com" method="POST" enctype="text/plain">
+                
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="Nome" placeholder="Il tuo nome" required>
 
-            <label>Email:</label>
-            <input type="email" name="email" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="Email" placeholder="nome@example.com" required>
 
-            <label>Messaggio:</label>
-            <textarea name="messaggio" rows="5" required></textarea>
+                <label for="message">Messaggio</label>
+                <textarea id="message" name="Messaggio" rows="5" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
 
-            <button type="submit">Invia</button>
-        </form>
+                <button type="submit" class="btn">Invia</button>
+            </form>
 
-        <p style="margin-top:20px; font-size:14px; opacity:0.8;">
-            Risponderò il prima possibile.
-        </p>
+            <div class="contact-info">
+                <h3>📧 Email diretta</h3>
+                <p>Puoi anche scrivermi direttamente a:</p>
+                <p><strong>tuamail@example.com</strong></p>
+            </div>
 
-    </div>
-</section>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2025 ED Tools — Creato da Emanuele</p>
-</footer>
-
-<script>
-document.getElementById("darkToggle").onclick = function() {
-    document.body.classList.toggle("dark-mode");
-    this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-};
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
