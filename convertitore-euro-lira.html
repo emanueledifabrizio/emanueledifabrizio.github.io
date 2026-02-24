@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convertitore Euro ↔ Lira - ED Tools</title>
+    <title>Convertitore Euro - Lira - ED Tools</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-83K00PC6ZZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-83K00PC6ZZ');
     </script>
 </head>
 
@@ -38,26 +38,27 @@
     </nav>
 
     <header class="hero">
-        <h1>Convertitore Euro ↔ Lira</h1>
-        <p>Converti rapidamente tra euro e lire italiane.</p>
+        <h1>Convertitore Euro - Lira</h1>
+        <p>Converti rapidamente tra Euro e Lire italiane.</p>
     </header>
 
     <section class="tool-container">
         <div class="tool-card">
 
-            <label for="euroInput">Euro (€)</label>
-            <input type="number" id="euroInput" placeholder="Es. 10">
+            <label for="valore">Valore</label>
+            <input type="number" id="valore" placeholder="Es. 100">
 
-            <button id="convertToLira" class="btn">Converti in Lire</button>
+            <label for="direzione">Conversione</label>
+            <select id="direzione">
+                <option value="euro-lira">Da Euro a Lire</option>
+                <option value="lira-euro">Da Lire a Euro</option>
+            </select>
 
-            <label for="liraInput">Lire (₤)</label>
-            <input type="number" id="liraInput" placeholder="Es. 19360">
-
-            <button id="convertToEuro" class="btn">Converti in Euro</button>
+            <button id="convertiEuroLira" class="btn">Converti</button>
 
             <div class="result-box">
                 <label>Risultato</label>
-                <input type="text" id="euroLiraResult" readonly>
+                <input type="text" id="risultatoEuroLira" readonly>
             </div>
 
         </div>
