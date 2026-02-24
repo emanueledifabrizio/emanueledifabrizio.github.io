@@ -3,11 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convertitore Euro - Lira - ED Tools</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
 
-    <!-- Google tag (gtag.js) -->
+    <!-- SEO BASE -->
+    <title>Convertitore Euro-Lira - Conversione automatica | ED Tools</title>
+    <meta name="description" content="Converti Euro in Lire e viceversa con il tasso ufficiale. Strumento semplice, veloce e gratuito.">
+    <meta name="keywords" content="convertitore euro lira, euro lire, conversione lire, lire euro, tasso ufficiale">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Convertitore Euro-Lira - ED Tools">
+    <meta property="og:description" content="Converti Euro in Lire e viceversa con un semplice strumento gratuito.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.edtoolsweb.it/convertitore-euro-lira.html">
+    <meta property="og:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <!-- TWITTER / X CARD -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Convertitore Euro-Lira - ED Tools">
+    <meta name="twitter:description" content="Converti Euro in Lire e viceversa con un semplice strumento gratuito.">
+    <meta name="twitter:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <!-- SCHEMA.ORG -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Convertitore Euro-Lira",
+      "description": "Converti Euro in Lire e viceversa con il tasso ufficiale.",
+      "url": "https://www.edtoolsweb.it/convertitore-euro-lira.html"
+    }
+    </script>
+
+    <!-- GOOGLE ANALYTICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-83K00PC6ZZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,55 +41,85 @@
       gtag('js', new Date());
       gtag('config', 'G-83K00PC6ZZ');
     </script>
+
+    <!-- STILE -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <nav class="navbar">
-        <div class="nav-left">
-            <span class="logo">E</span>
-            <span class="brand">ED Tools</span>
-        </div>
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="logo">E</span>
+        <span class="brand">ED Tools</span>
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tools.html">Tool</a>
+        <a href="novita.html">Novità</a>
+        <a href="faq.html">FAQ</a>
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+</nav>
 
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="tools.html">Tool</a>
-            <a href="novita.html">Novità</a>
-            <a href="faq.html">FAQ</a>
-            <a href="chi-sono.html">Chi sono</a>
-            <a href="contatti.html">Contatti</a>
-        </div>
+<header>
+    <h1>Convertitore Euro ⇄ Lira</h1>
+    <p>Converti rapidamente Euro in Lire e Lire in Euro.</p>
+</header>
 
-        <button id="darkToggle" class="dark-btn">🌙</button>
-    </nav>
+<main class="tool-container">
 
-    <header class="hero">
-        <h1>Convertitore Euro - Lira</h1>
-        <p>Converti rapidamente tra Euro e Lire italiane.</p>
-    </header>
+    <div class="input-group">
+        <label for="importo">Importo</label>
+        <input type="number" id="importo" placeholder="Inserisci un importo">
+    </div>
 
-    <section class="tool-container">
-        <div class="tool-card">
+    <div class="input-group">
+        <label for="tipo">Conversione</label>
+        <select id="tipo">
+            <option value="euro-lira">Euro → Lire</option>
+            <option value="lira-euro">Lire → Euro</option>
+        </select>
+    </div>
 
-            <label for="valore">Valore</label>
-            <input type="number" id="valore" placeholder="Es. 100">
+    <button onclick="converti()" class="btn">Converti</button>
 
-            <label for="direzione">Conversione</label>
-            <select id="direzione">
-                <option value="euro-lira">Da Euro a Lire</option>
-                <option value="lira-euro">Da Lire a Euro</option>
-            </select>
+    <div id="risultato" class="result-box" style="display:none;">
+        <h2>Risultato</h2>
+        <p><strong>Valore convertito:</strong> <span id="valoreConvertito"></span></p>
+    </div>
 
-            <button id="convertiEuroLira" class="btn">Converti</button>
+</main>
 
-            <div class="result-box">
-                <label>Risultato</label>
-                <input type="text" id="risultatoEuroLira" readonly>
-            </div>
+<footer>
+    <a href="index.html">← Torna alla Home</a>
+</footer>
 
-        </div>
-    </section>
+<script>
+function converti() {
+    const importo = parseFloat(document.getElementById("importo").value);
+    const tipo = document.getElementById("tipo").value;
 
-    <script src="script.js"></script>
+    if (isNaN(importo)) {
+        alert("Inserisci un importo valido.");
+        return;
+    }
+
+    const tasso = 1936.27; // Tasso fisso Euro-Lira
+
+    let risultato;
+
+    if (tipo === "euro-lira") {
+        risultato = importo * tasso;
+    } else {
+        risultato = importo / tasso;
+    }
+
+    document.getElementById("valoreConvertito").textContent = risultato.toFixed(2);
+    document.getElementById("risultato").style.display = "block";
+}
+</script>
+
 </body>
 </html>
