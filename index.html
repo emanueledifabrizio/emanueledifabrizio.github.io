@@ -3,11 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ED Tools - Home</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
 
-    <!-- Google tag (gtag.js) -->
+    <!-- SEO BASE -->
+    <title>ED Tools - Strumenti online gratuiti e veloci</title>
+    <meta name="description" content="ED Tools offre strumenti online semplici, veloci e gratuiti per calcoli, conversioni e utility utili nella vita quotidiana.">
+    <meta name="keywords" content="tool online, strumenti online, calcolatrice, convertitore, utility, gratis, ED Tools">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="ED Tools - Strumenti online gratuiti e veloci">
+    <meta property="og:description" content="Strumenti online semplici, veloci e gratuiti per calcoli e conversioni.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.edtoolsweb.it/">
+    <meta property="og:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <!-- TWITTER / X CARD -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ED Tools - Strumenti online gratuiti e veloci">
+    <meta name="twitter:description" content="Strumenti online semplici, veloci e gratuiti per calcoli e conversioni.">
+    <meta name="twitter:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <!-- SCHEMA.ORG -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ED Tools",
+      "url": "https://www.edtoolsweb.it/",
+      "description": "Strumenti online semplici, veloci e gratuiti per calcoli e conversioni."
+    }
+    </script>
+
+    <!-- GOOGLE ANALYTICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-83K00PC6ZZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,52 +41,86 @@
       gtag('js', new Date());
       gtag('config', 'G-83K00PC6ZZ');
     </script>
+
+    <!-- STILE -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <nav class="navbar">
-        <div class="nav-left">
-            <span class="logo">E</span>
-            <span class="brand">ED Tools</span>
-        </div>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="logo">E</span>
+        <span class="brand">ED Tools</span>
+    </div>
+    <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="tools.html">Tool</a>
+        <a href="novita.html">Novità</a>
+        <a href="faq.html">FAQ</a>
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+</nav>
 
-        <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="tools.html">Tool</a>
-            <a href="novita.html">Novità</a>
-            <a href="faq.html">FAQ</a>
-            <a href="chi-sono.html">Chi sono</a>
-            <a href="contatti.html">Contatti</a>
-        </div>
+<!-- HERO SECTION -->
+<header class="hero">
+    <h1>Benvenuto su ED Tools</h1>
+    <p>Strumenti online semplici, veloci e gratuiti per calcoli, conversioni e attività quotidiane.</p>
+    <a href="tools.html" class="btn hero-btn">Scopri i Tool</a>
+</header>
 
-        <button id="darkToggle" class="dark-btn">🌙</button>
-    </nav>
+<!-- SEZIONE TOOL POPOLARI -->
+<section class="popular-tools">
+    <h2>Strumenti più utilizzati</h2>
 
-    <header class="hero">
-        <h1>Benvenuto su ED Tools</h1>
-        <p>Una raccolta di strumenti utili, veloci e gratuiti per semplificare la tua giornata.</p>
-    </header>
+    <div class="tool-grid">
 
-    <section class="tool-container">
-        <div class="tool-card">
-            <h2>I tool più usati</h2>
-            <ul class="home-list">
-                <li><a href="calcolatore-iva.html">Calcolatore IVA</a></li>
-                <li><a href="calcolatore-percentuale.html">Calcolatore Percentuale</a></li>
-                <li><a href="calcolatore-sconto.html">Calcolatore Sconto</a></li>
-                <li><a href="convertitore-temperatura.html">Convertitore Temperatura</a></li>
-                <li><a href="convertitore-euro-lira.html">Convertitore Euro-Lira</a></li>
-                <li><a href="generatore-password.html">Generatore Password</a></li>
-            </ul>
+        <a href="calcolatore-iva.html" class="tool-card">
+            <h3>Calcolatore IVA</h3>
+            <p>Calcola IVA, imponibile e totale.</p>
+        </a>
 
-            <p>
-                Puoi trovare tutti gli strumenti disponibili nella pagina 
-                <a href="tools.html">Tool</a>.
-            </p>
-        </div>
-    </section>
+        <a href="calcolatore-percentuale.html" class="tool-card">
+            <h3>Calcolatore Percentuale</h3>
+            <p>Calcola percentuali in pochi secondi.</p>
+        </a>
 
-    <script src="script.js"></script>
+        <a href="calcolatore-sconto.html" class="tool-card">
+            <h3>Calcolatore Sconto</h3>
+            <p>Calcola sconti e prezzi finali.</p>
+        </a>
+
+        <a href="generatore-password.html" class="tool-card">
+            <h3>Generatore Password</h3>
+            <p>Crea password sicure e casuali.</p>
+        </a>
+
+        <a href="convertitore-temperatura.html" class="tool-card">
+            <h3>Convertitore Temperatura</h3>
+            <p>Converti tra Celsius, Fahrenheit e Kelvin.</p>
+        </a>
+
+        <a href="convertitore-euro-lira.html" class="tool-card">
+            <h3>Euro ⇄ Lira</h3>
+            <p>Conversione con tasso ufficiale.</p>
+        </a>
+
+    </div>
+</section>
+
+<!-- SEZIONE NOVITÀ -->
+<section class="home-news">
+    <h2>Ultime novità</h2>
+    <p>Scopri gli aggiornamenti più recenti e i nuovi strumenti aggiunti al sito.</p>
+    <a href="novita.html" class="btn small">Vai alle novità</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2024–2026 ED Tools — Tutti i diritti riservati</p>
+</footer>
+
 </body>
 </html>
