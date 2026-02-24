@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-83K00PC6ZZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-83K00PC6ZZ');
     </script>
 </head>
 
@@ -45,28 +45,24 @@
     <section class="tool-container">
         <div class="tool-card">
 
-            <label for="tempInput">Inserisci valore</label>
-            <input type="number" id="tempInput" placeholder="Es. 25">
+            <label for="temperatura">Valore</label>
+            <input type="number" id="temperatura" placeholder="Es. 25">
 
-            <label for="fromUnit">Da</label>
-            <select id="fromUnit">
-                <option value="c">Celsius (°C)</option>
-                <option value="f">Fahrenheit (°F)</option>
-                <option value="k">Kelvin (K)</option>
+            <label for="scala">Scala di conversione</label>
+            <select id="scala">
+                <option value="c-f">Da Celsius a Fahrenheit</option>
+                <option value="f-c">Da Fahrenheit a Celsius</option>
+                <option value="c-k">Da Celsius a Kelvin</option>
+                <option value="k-c">Da Kelvin a Celsius</option>
+                <option value="f-k">Da Fahrenheit a Kelvin</option>
+                <option value="k-f">Da Kelvin a Fahrenheit</option>
             </select>
 
-            <label for="toUnit">A</label>
-            <select id="toUnit">
-                <option value="c">Celsius (°C)</option>
-                <option value="f">Fahrenheit (°F)</option>
-                <option value="k">Kelvin (K)</option>
-            </select>
-
-            <button id="convertTemp" class="btn">Converti</button>
+            <button id="convertiTemperatura" class="btn">Converti</button>
 
             <div class="result-box">
                 <label>Risultato</label>
-                <input type="text" id="tempResult" readonly>
+                <input type="text" id="risultatoTemperatura" readonly>
             </div>
 
         </div>
