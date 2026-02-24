@@ -3,11 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tool - ED Tools</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
 
-    <!-- Google tag (gtag.js) -->
+    <!-- SEO BASE -->
+    <title>Tutti i Tool - Strumenti online gratuiti | ED Tools</title>
+    <meta name="description" content="Scopri tutti gli strumenti disponibili su ED Tools: calcolatori, convertitori e utility utili, gratuiti e veloci.">
+    <meta name="keywords" content="tool, strumenti online, calcolatori, convertitori, utility, gratis, ED Tools">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Tutti i Tool - ED Tools">
+    <meta property="og:description" content="Calcolatori, convertitori e strumenti utili gratuiti.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.edtoolsweb.it/tools.html">
+    <meta property="og:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <!-- TWITTER / X CARD -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Tutti i Tool - ED Tools">
+    <meta name="twitter:description" content="Calcolatori, convertitori e strumenti utili gratuiti.">
+    <meta name="twitter:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <!-- SCHEMA.ORG -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Tutti i Tool - ED Tools",
+      "description": "Elenco completo degli strumenti disponibili su ED Tools.",
+      "url": "https://www.edtoolsweb.it/tools.html"
+    }
+    </script>
+
+    <!-- GOOGLE ANALYTICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-83K00PC6ZZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,55 +41,78 @@
       gtag('js', new Date());
       gtag('config', 'G-83K00PC6ZZ');
     </script>
+
+    <!-- STILE -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <nav class="navbar">
-        <div class="nav-left">
-            <span class="logo">E</span>
-            <span class="brand">ED Tools</span>
-        </div>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="logo">E</span>
+        <span class="brand">ED Tools</span>
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="tools.html" class="active">Tool</a>
+        <a href="novita.html">Novità</a>
+        <a href="faq.html">FAQ</a>
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+</nav>
 
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="tools.html" class="active">Tool</a>
-            <a href="novita.html">Novità</a>
-            <a href="faq.html">FAQ</a>
-            <a href="chi-sono.html">Chi sono</a>
-            <a href="contatti.html">Contatti</a>
-        </div>
+<!-- HEADER -->
+<header>
+    <h1>Tutti i Tool</h1>
+    <p>Esplora l’elenco completo degli strumenti disponibili su ED Tools.</p>
+</header>
 
-        <button id="darkToggle" class="dark-btn">🌙</button>
-    </nav>
+<!-- LISTA TOOL -->
+<main class="tool-list-container">
 
-    <header class="hero">
-        <h1>Tutti i tool</h1>
-        <p>Una raccolta completa di strumenti utili, veloci e gratuiti.</p>
-    </header>
+    <div class="tool-grid">
 
-    <section class="tool-container">
-        <div class="tool-card">
+        <a href="calcolatore-iva.html" class="tool-card">
+            <h3>Calcolatore IVA</h3>
+            <p>Calcola IVA, imponibile e totale.</p>
+        </a>
 
-            <h2>Strumenti disponibili</h2>
+        <a href="calcolatore-percentuale.html" class="tool-card">
+            <h3>Calcolatore Percentuale</h3>
+            <p>Calcola percentuali in pochi secondi.</p>
+        </a>
 
-            <ul class="home-list">
-                <li><a href="calcolatore-iva.html">Calcolatore IVA</a></li>
-                <li><a href="calcolatore-percentuale.html">Calcolatore Percentuale</a></li>
-                <li><a href="calcolatore-sconto.html">Calcolatore Sconto</a></li>
-                <li><a href="convertitore-temperatura.html">Convertitore Temperatura</a></li>
-                <li><a href="convertitore-euro-lira.html">Convertitore Euro-Lira</a></li>
-                <li><a href="generatore-password.html">Generatore Password</a></li>
-            </ul>
+        <a href="calcolatore-sconto.html" class="tool-card">
+            <h3>Calcolatore Sconto</h3>
+            <p>Calcola sconti e prezzi finali.</p>
+        </a>
 
-            <p>
-                Nuovi strumenti verranno aggiunti nel tempo.  
-                Puoi seguire gli aggiornamenti nella pagina <a href="novita.html">Novità</a>.
-            </p>
+        <a href="convertitore-temperatura.html" class="tool-card">
+            <h3>Convertitore Temperatura</h3>
+            <p>Converti tra Celsius, Fahrenheit e Kelvin.</p>
+        </a>
 
-        </div>
-    </section>
+        <a href="convertitore-euro-lira.html" class="tool-card">
+            <h3>Euro ⇄ Lira</h3>
+            <p>Conversione con tasso ufficiale.</p>
+        </a>
 
-    <script src="script.js"></script>
+        <a href="generatore-password.html" class="tool-card">
+            <h3>Generatore Password</h3>
+            <p>Crea password sicure e casuali.</p>
+        </a>
+
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <a href="index.html">← Torna alla Home</a>
+</footer>
+
 </body>
 </html>
