@@ -4,79 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcolatore Sconto - ED Tools</title>
-
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
+
 <body>
 
-<nav class="navbar">
-    <div class="nav-left">
-        <span class="logo">E</span>
-        <span class="brand">ED Tools</span>
-    </div>
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="logo">E</span>
+            <span class="brand">ED Tools</span>
+        </div>
 
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="tools.html">Tool</a>
-        <a href="novita.html">Novità</a>
-        <a href="faq.html">FAQ</a>
-        <a href="chi-sono.html">Chi sono</a>
-        <a href="contatti.html">Contatti</a>
-    </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="tools.html">Tool</a>
+            <a href="novita.html">Novità</a>
+            <a href="faq.html">FAQ</a>
+            <a href="chi-sono.html">Chi sono</a>
+            <a href="contatti.html">Contatti</a>
+        </div>
 
-    <button id="darkToggle" class="dark-btn">🌙</button>
-</nav>
+        <button id="darkToggle" class="dark-btn">🌙</button>
+    </nav>
 
-<header class="hero">
-    <h1>Calcolatore Sconto</h1>
-    <p>Calcola rapidamente il prezzo scontato e il risparmio.</p>
-</header>
+    <header class="hero">
+        <h1>Calcolatore di sconto</h1>
+        <p>Calcola rapidamente il prezzo scontato e il risparmio.</p>
+    </header>
 
-<section class="tool-container">
+    <section class="tool-container">
+        <div class="tool-card">
 
-    <div class="tool-box">
-        <label>Prezzo originale (€):</label>
-        <input type="number" id="prezzo" placeholder="Inserisci prezzo">
+            <label for="prezzoOriginale">Prezzo originale (€)</label>
+            <input type="number" id="prezzoOriginale" placeholder="Es. 100">
 
-        <label>Sconto (%):</label>
-        <input type="number" id="sconto" placeholder="Inserisci percentuale">
+            <label for="percentualeSconto">Percentuale di sconto (%)</label>
+            <input type="number" id="percentualeSconto" placeholder="Es. 20">
 
-        <button onclick="calcolaSconto()">Calcola</button>
+            <button id="calcolaSconto" class="btn">Calcola</button>
 
-        <div id="risultato" class="result-box"></div>
-    </div>
+            <div class="result-box">
+                <label>Risultato</label>
+                <input type="text" id="risultatoSconto" readonly>
+            </div>
 
-</section>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2025 ED Tools — Creato da Emanuele</p>
-</footer>
-
-<script>
-function calcolaSconto() {
-    const prezzo = parseFloat(document.getElementById("prezzo").value);
-    const sconto = parseFloat(document.getElementById("sconto").value);
-
-    if (isNaN(prezzo) || isNaN(sconto)) {
-        document.getElementById("risultato").innerHTML = "<p>Inserisci valori validi.</p>";
-        return;
-    }
-
-    const risparmio = prezzo * (sconto / 100);
-    const finale = prezzo - risparmio;
-
-    document.getElementById("risultato").innerHTML = `
-        <p><strong>Risparmio:</strong> € ${risparmio.toFixed(2)}</p>
-        <p><strong>Prezzo finale:</strong> € ${finale.toFixed(2)}</p>
-    `;
-}
-
-document.getElementById("darkToggle").onclick = function() {
-    document.body.classList.toggle("dark-mode");
-    this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-};
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
