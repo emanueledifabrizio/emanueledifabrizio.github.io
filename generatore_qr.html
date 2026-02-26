@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Generatore QR Code | ED Tools</title>
+    <meta name="description" content="Genera QR Code personalizzati in pochi secondi. Inserisci un testo o un link e scarica il tuo QR Code gratuitamente.">
+    <meta name="keywords" content="generatore qr code, qr code online, crea qr code, qr gratis, qr code generator">
+
+    <meta property="og:title" content="Generatore QR Code - ED Tools">
+    <meta property="og:description" content="Crea QR Code personalizzati e scaricali gratuitamente.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.edtoolsweb.it/generatore-qr.html">
+    <meta property="og:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Generatore QR Code - ED Tools">
+    <meta name="twitter:description" content="Crea QR Code personalizzati e scaricali gratuitamente.">
+    <meta name="twitter:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Generatore QR Code",
+      "description": "Strumento gratuito per creare QR Code personalizzati.",
+      "url": "https://www.edtoolsweb.it/generatore-qr.html"
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Libreria QRious -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Generatore di QR Code</h1>
+</header>
+
+<section class="content">
+    <p>
+        Il generatore di QR Code di ED Tools ti permette di creare rapidamente QR Code personalizzati a partire 
+        da un testo, un link, un numero di telefono o qualsiasi informazione tu voglia codificare. È uno 
+        strumento utile per condividere informazioni in modo semplice e immediato, senza dover digitare nulla.
+    </p>
+
+    <p>
+        I QR Code sono utilizzati in moltissimi contesti: biglietti da visita, volantini, siti web, eventi, 
+        menu digitali, documenti e molto altro. Con questo strumento puoi generare un QR Code in pochi secondi 
+        e scaricarlo come immagine PNG da utilizzare dove preferisci.
+    </p>
+
+    <p>
+        Lo strumento è completamente gratuito, non richiede registrazione e funziona direttamente nel tuo 
+        browser, garantendo velocità e privacy. Inserisci il contenuto, clicca su “Genera QR Code” e il tuo 
+        codice sarà pronto all’uso.
+    </p>
+</section>
+
+<section class="tool">
+    <label for="qrtext">Testo o link da convertire:</label>
+    <input type="text" id="qrtext" placeholder="Inserisci testo, URL, numero...">
+
+    <button onclick="generaQR()">Genera QR Code</button>
+
+    <canvas id="qrcode" style="margin-top:20px;"></canvas>
+
+    <div id="downloadArea" style="display:none; margin-top:15px;">
+        <a id="downloadLink" download="qrcode.png">Scarica QR Code</a>
+    </div>
+</section>
+
+<script>
+let qr;
+
+function generaQR() {
+    const testo = document.getElementById("qrtext").value;
+
+    if (testo.trim() === "") {
+        alert("Inserisci un testo valido.");
+        return;
+    }
+
+    qr = new QRious({
+        element: document.getElementById("qrcode"),
+        value: testo,
+        size: 250
+    });
+
+    const link = document.getElementById("downloadLink");
+    link.href = qr.toDataURL("image/png");
+
+    document.getElementById("downloadArea").style.display = "block";
+}
+</script>
+
+<footer>
+    <p>© 2026 ED Tools</p>
+</footer>
+
+</body>
+</html>
