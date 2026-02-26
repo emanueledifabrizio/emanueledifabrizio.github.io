@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calcolatore IMC - Indice di Massa Corporea | ED Tools</title>
+    <meta name="description" content="Calcola il tuo IMC (Indice di Massa Corporea) inserendo peso e altezza. Strumento gratuito, semplice e immediato.">
+    <meta name="keywords" content="calcolatore imc, bmi, indice massa corporea, calcolo imc, peso ideale">
+
+    <meta property="og:title" content="Calcolatore IMC - ED Tools">
+    <meta property="og:description" content="Calcola il tuo IMC in pochi secondi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.edtoolsweb.it/calcolatore-imc.html">
+    <meta property="og:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calcolatore IMC - ED Tools">
+    <meta name="twitter:description" content="Calcola il tuo IMC in pochi secondi.">
+    <meta name="twitter:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Calcolatore IMC",
+      "description": "Calcola il tuo Indice di Massa Corporea in pochi secondi.",
+      "url": "https://www.edtoolsweb.it/calcolatore-imc.html"
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Calcolatore IMC (Indice di Massa Corporea)</h1>
+</header>
+
+<section class="content">
+    <p>
+        Il calcolatore IMC di ED Tools ti permette di calcolare rapidamente il tuo Indice di Massa Corporea 
+        inserendo semplicemente il peso e l’altezza. L’IMC è un valore utilizzato per valutare in modo 
+        generale la relazione tra peso e statura, fornendo un’indicazione orientativa sul proprio stato 
+        corporeo.
+    </p>
+
+    <p>
+        L’IMC non è uno strumento diagnostico, ma un semplice indicatore matematico utilizzato in ambito 
+        informativo. Si basa sulla formula:
+    </p>
+
+    <p style="text-align:center; font-weight:bold;">
+        IMC = peso (kg) / altezza² (m)
+    </p>
+
+    <p>
+        Questo valore permette di classificare la persona in diverse categorie, come sottopeso, normopeso, 
+        sovrappeso o obesità. È uno strumento utile per avere una prima valutazione generale, ma non tiene 
+        conto di fattori come massa muscolare, età, sesso o struttura corporea.
+    </p>
+
+    <p>
+        Utilizzare il calcolatore è semplice: inserisci il tuo peso in chilogrammi e la tua altezza in metri, 
+        e il sistema calcolerà automaticamente il tuo IMC insieme alla relativa categoria. Lo strumento è 
+        gratuito, immediato e non richiede alcuna registrazione.
+    </p>
+</section>
+
+<section class="tool">
+    <label for="peso">Peso (kg):</label>
+    <input type="number" id="peso" placeholder="Es. 70">
+
+    <label for="altezza">Altezza (m):</label>
+    <input type="number" step="0.01" id="altezza" placeholder="Es. 1.75">
+
+    <button onclick="calcolaIMC()">Calcola IMC</button>
+
+    <div id="risultato"></div>
+</section>
+
+<script>
+function calcolaIMC() {
+    const peso = parseFloat(document.getElementById("peso").value);
+    const altezza = parseFloat(document.getElementById("altezza").value);
+
+    if (isNaN(peso) || isNaN(altezza) || altezza <= 0) {
+        document.getElementById("risultato").innerHTML = "Inserisci valori validi.";
+        return;
+    }
+
+    const imc = peso / (altezza * altezza);
+    let categoria = "";
+
+    if (imc < 18.5) categoria = "Sottopeso";
+    else if (imc < 25) categoria = "Normopeso";
+    else if (imc < 30) categoria = "Sovrappeso";
+    else categoria = "Obesità";
+
+    document.getElementById("risultato").innerHTML =
+        "<p>Il tuo IMC è: <strong>" + imc.toFixed(2) + "</strong></p>" +
+        "<p>Categoria: <strong>" + categoria + "</strong></p>";
+}
+</script>
+
+<footer>
+    <p>© 2026 ED Tools</p>
+</footer>
+
+</body>
+</html>
