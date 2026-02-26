@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contatore Caratteri e Parole | ED Tools</title>
+    <meta name="description" content="Conta caratteri, parole e spazi in tempo reale. Strumento gratuito e semplice per scrittori, studenti e professionisti.">
+    <meta name="keywords" content="contatore caratteri, contatore parole, conta caratteri online, conta parole, editor testo">
+
+    <meta property="og:title" content="Contatore Caratteri e Parole - ED Tools">
+    <meta property="og:description" content="Conta caratteri e parole in tempo reale.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.edtoolsweb.it/contatore-caratteri-parole.html">
+    <meta property="og:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Contatore Caratteri e Parole - ED Tools">
+    <meta name="twitter:description" content="Conta caratteri e parole in tempo reale.">
+    <meta name="twitter:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Contatore Caratteri e Parole",
+      "description": "Strumento gratuito per contare caratteri e parole in tempo reale.",
+      "url": "https://www.edtoolsweb.it/contatore-caratteri-parole.html"
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Contatore Caratteri e Parole</h1>
+</header>
+
+<section class="content">
+    <p>
+        Il contatore di caratteri e parole di ED Tools ti permette di analizzare rapidamente qualsiasi testo 
+        e ottenere il numero esatto di caratteri, parole e spazi. È uno strumento utile per studenti, scrittori, 
+        blogger, copywriter e per chiunque debba rispettare limiti di lunghezza nei propri contenuti.
+    </p>
+
+    <p>
+        Lo strumento funziona in tempo reale: basta iniziare a scrivere o incollare un testo nell’area dedicata 
+        e i valori verranno aggiornati automaticamente. È ideale per post sui social, email, articoli, temi 
+        scolastici, descrizioni di prodotti e qualsiasi contenuto che richieda precisione.
+    </p>
+
+    <p>
+        Il contatore è completamente gratuito, non richiede registrazione e non salva alcun dato. Tutto avviene 
+        direttamente nel tuo browser, garantendo privacy e velocità.
+    </p>
+</section>
+
+<section class="tool">
+    <label for="testo">Inserisci il testo:</label>
+    <textarea id="testo" oninput="conta()" placeholder="Scrivi o incolla qui il tuo testo..."></textarea>
+
+    <div id="risultati">
+        <p>Caratteri (senza spazi): <strong id="caratteri"></strong></p>
+        <p>Caratteri (con spazi): <strong id="caratteriSpazi"></strong></p>
+        <p>Parole: <strong id="parole"></strong></p>
+    </div>
+</section>
+
+<script>
+function conta() {
+    const testo = document.getElementById("testo").value;
+
+    const caratteri = testo.replace(/\s+/g, '').length;
+    const caratteriSpazi = testo.length;
+    const parole = testo.trim() === "" ? 0 : testo.trim().split(/\s+/).length;
+
+    document.getElementById("caratteri").textContent = caratteri;
+    document.getElementById("caratteriSpazi").textContent = caratteriSpazi;
+    document.getElementById("parole").textContent = parole;
+}
+</script>
+
+<footer>
+    <p>© 2026 ED Tools</p>
+</footer>
+
+</body>
+</html>
