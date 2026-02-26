@@ -4,25 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO BASE -->
-    <title>Calcolatore Sconto - Calcola sconti e prezzi finali | ED Tools</title>
-    <meta name="description" content="Calcola lo sconto e il prezzo finale di un prodotto. Inserisci prezzo e percentuale di sconto per ottenere il totale. Gratis, veloce e semplice.">
-    <meta name="keywords" content="calcolatore sconto, calcolo sconto, prezzo finale, sconto online, percentuale sconto">
+    <title>Calcolatore Sconto - Calcola sconti online | ED Tools</title>
+    <meta name="description" content="Calcola lo sconto in modo semplice e veloce. Inserisci il prezzo e la percentuale di sconto per ottenere immediatamente il prezzo finale. Strumento gratuito e intuitivo.">
+    <meta name="keywords" content="calcolatore sconto, calcolo sconto, sconto percentuale, prezzo scontato, calcolare sconto online">
 
-    <!-- OPEN GRAPH -->
     <meta property="og:title" content="Calcolatore Sconto - ED Tools">
     <meta property="og:description" content="Calcola sconti e prezzi finali in pochi secondi.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.edtoolsweb.it/calcolatore-sconto.html">
     <meta property="og:image" content="https://www.edtoolsweb.it/favicon.png">
 
-    <!-- TWITTER / X CARD -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Calcolatore Sconto - ED Tools">
     <meta name="twitter:description" content="Calcola sconti e prezzi finali in pochi secondi.">
     <meta name="twitter:image" content="https://www.edtoolsweb.it/favicon.png">
 
-    <!-- SCHEMA.ORG -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -33,66 +29,50 @@
     }
     </script>
 
-    <!-- GOOGLE ANALYTICS -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-83K00PC6ZZ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-83K00PC6ZZ');
-    </script>
-
-    <!-- STILE -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav class="navbar">
-    <div class="nav-left">
-        <span class="logo">E</span>
-        <span class="brand">ED Tools</span>
-    </div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="tools.html">Tool</a>
-        <a href="novita.html">Novità</a>
-        <a href="faq.html">FAQ</a>
-        <a href="chi-sono.html">Chi sono</a>
-        <a href="contatti.html">Contatti</a>
-    </div>
-</nav>
-
 <header>
     <h1>Calcolatore Sconto</h1>
-    <p>Calcola rapidamente sconti e prezzo finale.</p>
 </header>
 
-<main class="tool-container">
+<section class="content">
+    <p>
+        Il calcolatore di sconto di ED Tools è uno strumento semplice e immediato che ti permette di 
+        calcolare rapidamente il prezzo finale di un prodotto o servizio dopo l’applicazione di uno 
+        sconto percentuale. È utile per chi vuole conoscere subito quanto risparmierà e quale sarà il 
+        costo finale senza dover fare calcoli manuali.
+    </p>
 
-    <div class="input-group">
-        <label for="prezzo">Prezzo originale (€)</label>
-        <input type="number" id="prezzo" placeholder="Inserisci il prezzo">
-    </div>
+    <p>
+        Gli sconti sono presenti in moltissime situazioni quotidiane: saldi, promozioni, offerte online, 
+        preventivi e trattative commerciali. Con questo strumento puoi calcolare lo sconto partendo dal 
+        prezzo originale e dalla percentuale, ottenendo immediatamente sia l’importo risparmiato sia il 
+        prezzo finale da pagare. È ideale per consumatori, negozianti, studenti e professionisti.
+    </p>
 
-    <div class="input-group">
-        <label for="sconto">Sconto (%)</label>
-        <input type="number" id="sconto" placeholder="Inserisci la percentuale di sconto">
-    </div>
+    <p>
+        Utilizzare il calcolatore è molto semplice: inserisci il prezzo iniziale, la percentuale di 
+        sconto e il sistema calcolerà automaticamente il risparmio e il prezzo scontato. È uno strumento 
+        gratuito, veloce e sempre disponibile online, perfetto per chi vuole prendere decisioni di acquisto 
+        in modo consapevole e immediato.
+    </p>
+</section>
 
-    <button onclick="calcolaSconto()" class="btn">Calcola</button>
+<!-- AREA TOOL -->
+<section class="tool">
+    <label for="prezzo">Prezzo iniziale (€):</label>
+    <input type="number" id="prezzo" placeholder="Inserisci prezzo">
 
-    <div id="risultato" class="result-box" style="display:none;">
-        <h2>Risultato</h2>
-        <p><strong>Importo scontato:</strong> <span id="importoSconto"></span> €</p>
-        <p><strong>Prezzo finale:</strong> <span id="prezzoFinale"></span> €</p>
-    </div>
+    <label for="sconto">Sconto (%):</label>
+    <input type="number" id="sconto" placeholder="Inserisci percentuale">
 
-</main>
+    <button onclick="calcolaSconto()">Calcola</button>
 
-<footer>
-    <a href="index.html">← Torna alla Home</a>
-</footer>
+    <div id="risultato"></div>
+</section>
 
 <script>
 function calcolaSconto() {
@@ -100,19 +80,22 @@ function calcolaSconto() {
     const sconto = parseFloat(document.getElementById("sconto").value);
 
     if (isNaN(prezzo) || isNaN(sconto)) {
-        alert("Inserisci valori validi.");
+        document.getElementById("risultato").innerHTML = "Inserisci valori validi.";
         return;
     }
 
-    const importoSconto = (prezzo * sconto) / 100;
-    const prezzoFinale = prezzo - importoSconto;
+    const risparmio = prezzo * (sconto / 100);
+    const prezzoFinale = prezzo - risparmio;
 
-    document.getElementById("importoSconto").textContent = importoSconto.toFixed(2);
-    document.getElementById("prezzoFinale").textContent = prezzoFinale.toFixed(2);
-
-    document.getElementById("risultato").style.display = "block";
+    document.getElementById("risultato").innerHTML =
+        "<p>Risparmio: € " + risparmio.toFixed(2) + "</p>" +
+        "<p>Prezzo finale: € " + prezzoFinale.toFixed(2) + "</p>";
 }
 </script>
+
+<footer>
+    <p>© 2026 ED Tools</p>
+</footer>
 
 </body>
 </html>
