@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calcolatore Interesse Composto | ED Tools</title>
+    <meta name="description" content="Calcola l'interesse composto in modo semplice e veloce. Inserisci capitale, tasso e anni per ottenere il valore finale.">
+    <meta name="keywords" content="interesse composto, calcolatore interesse composto, investimento, risparmio, calcolo interessi">
+
+    <meta property="og:title" content="Calcolatore Interesse Composto - ED Tools">
+    <meta property="og:description" content="Calcola l'interesse composto in pochi secondi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.edtoolsweb.it/calcolatore-interesse-composto.html">
+    <meta property="og:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calcolatore Interesse Composto - ED Tools">
+    <meta name="twitter:description" content="Calcola l'interesse composto in pochi secondi.">
+    <meta name="twitter:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Calcolatore Interesse Composto",
+      "description": "Strumento gratuito per calcolare l'interesse composto.",
+      "url": "https://www.edtoolsweb.it/calcolatore-interesse-composto.html"
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Calcolatore di Interesse Composto</h1>
+</header>
+
+<section class="content">
+    <p>
+        Il calcolatore di interesse composto di ED Tools ti permette di scoprire quanto può crescere un capitale 
+        nel tempo grazie all’accumulo degli interessi. L’interesse composto è uno dei concetti più importanti 
+        nel mondo del risparmio e degli investimenti, perché permette al denaro di crescere in modo esponenziale.
+    </p>
+
+    <p>
+        La formula dell’interesse composto è:
+    </p>
+
+    <p style="text-align:center; font-weight:bold;">
+        A = P × (1 + r)<sup>n</sup>
+    </p>
+
+    <p>
+        Dove:
+        <br>• <strong>P</strong> = capitale iniziale  
+        <br>• <strong>r</strong> = tasso di interesse annuale  
+        <br>• <strong>n</strong> = numero di anni  
+        <br>• <strong>A</strong> = valore finale  
+    </p>
+
+    <p>
+        Inserisci i tuoi valori e scopri subito quanto può diventare il tuo capitale nel tempo. Lo strumento è 
+        gratuito, immediato e non richiede registrazione.
+    </p>
+</section>
+
+<section class="tool">
+    <label for="capitale">Capitale iniziale (€):</label>
+    <input type="number" id="capitale" placeholder="Es. 1000">
+
+    <label for="tasso">Tasso di interesse annuale (%):</label>
+    <input type="number" id="tasso" placeholder="Es. 5">
+
+    <label for="anni">Anni:</label>
+    <input type="number" id="anni" placeholder="Es. 10">
+
+    <button onclick="calcolaInteresse()">Calcola</button>
+
+    <div id="risultato"></div>
+</section>
+
+<script>
+function calcolaInteresse() {
+    const capitale = parseFloat(document.getElementById("capitale").value);
+    const tasso = parseFloat(document.getElementById("tasso").value) / 100;
+    const anni = parseFloat(document.getElementById("anni").value);
+
+    if (isNaN(capitale) || isNaN(tasso) || isNaN(anni) || anni <= 0) {
+        document.getElementById("risultato").innerHTML = "Inserisci valori validi.";
+        return;
+    }
+
+    const valoreFinale = capitale * Math.pow(1 + tasso, anni);
+
+    document.getElementById("risultato").innerHTML =
+        "<p>Valore finale: <strong>" + valoreFinale.toFixed(2) + " €</strong></p>";
+}
+</script>
+
+<footer>
+    <p>© 2026 ED Tools</p>
+</footer>
+
+</body>
+</html>
