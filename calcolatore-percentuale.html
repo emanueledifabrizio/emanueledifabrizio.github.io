@@ -4,111 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO BASE -->
     <title>Calcolatore Percentuale - Calcola percentuali online | ED Tools</title>
-    <meta name="description" content="Calcola percentuali in pochi secondi. Inserisci i valori e ottieni subito il risultato. Strumento gratuito, veloce e facile da usare.">
-    <meta name="keywords" content="calcolatore percentuale, calcolo percentuale, percentuali online, matematica, sconto percentuale">
+    <meta name="description" content="Calcola percentuali in modo semplice e veloce. Inserisci i valori e ottieni subito il risultato. Strumento gratuito e immediato.">
+    <meta name="keywords" content="calcolatore percentuale, calcolo percentuale, percentuali online, aumento percentuale, sconto percentuale">
 
-    <!-- OPEN GRAPH -->
     <meta property="og:title" content="Calcolatore Percentuale - ED Tools">
-    <meta property="og:description" content="Calcola percentuali in pochi secondi con uno strumento semplice e gratuito.">
+    <meta property="og:description" content="Calcola percentuali, aumenti e sconti in pochi secondi.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.edtoolsweb.it/calcolatore-percentuale.html">
     <meta property="og:image" content="https://www.edtoolsweb.it/favicon.png">
 
-    <!-- TWITTER / X CARD -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Calcolatore Percentuale - ED Tools">
-    <meta name="twitter:description" content="Calcola percentuali in pochi secondi con uno strumento semplice e gratuito.">
+    <meta name="twitter:description" content="Calcola percentuali, aumenti e sconti in pochi secondi.">
     <meta name="twitter:image" content="https://www.edtoolsweb.it/favicon.png">
 
-    <!-- SCHEMA.ORG -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Calcolatore Percentuale",
-      "description": "Calcola percentuali in pochi secondi con uno strumento semplice e gratuito.",
+      "description": "Calcola percentuali, aumenti e sconti in pochi secondi.",
       "url": "https://www.edtoolsweb.it/calcolatore-percentuale.html"
     }
     </script>
 
-    <!-- GOOGLE ANALYTICS -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-83K00PC6ZZ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-83K00PC6ZZ');
-    </script>
-
-    <!-- STILE -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav class="navbar">
-    <div class="nav-left">
-        <span class="logo">E</span>
-        <span class="brand">ED Tools</span>
-    </div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="tools.html">Tool</a>
-        <a href="novita.html">Novità</a>
-        <a href="faq.html">FAQ</a>
-        <a href="chi-sono.html">Chi sono</a>
-        <a href="contatti.html">Contatti</a>
-    </div>
-</nav>
-
 <header>
     <h1>Calcolatore Percentuale</h1>
-    <p>Calcola rapidamente percentuali e risultati matematici.</p>
 </header>
 
-<main class="tool-container">
+<section class="content">
+    <p>
+        Il calcolatore percentuale di ED Tools è uno strumento semplice e immediato che ti permette di 
+        calcolare qualsiasi tipo di percentuale in pochi secondi. È utile per studenti, lavoratori, 
+        professionisti e chiunque abbia bisogno di ottenere rapidamente aumenti, sconti, proporzioni o 
+        variazioni percentuali senza dover fare calcoli manuali.
+    </p>
 
-    <div class="input-group">
-        <label for="numero">Numero</label>
-        <input type="number" id="numero" placeholder="Inserisci un numero">
-    </div>
+    <p>
+        Le percentuali sono presenti in moltissime situazioni quotidiane: dal calcolo di uno sconto in 
+        negozio, alla verifica di un aumento di stipendio, fino alla determinazione di una variazione 
+        statistica o finanziaria. Con questo strumento puoi calcolare quanto rappresenta una percentuale 
+        di un numero, oppure di quanto aumenta o diminuisce un valore in base alla percentuale scelta.
+    </p>
 
-    <div class="input-group">
-        <label for="percentuale">Percentuale (%)</label>
-        <input type="number" id="percentuale" placeholder="Inserisci la percentuale">
-    </div>
+    <p>
+        Utilizzare il calcolatore è molto semplice: inserisci il valore iniziale, la percentuale e il 
+        sistema calcolerà automaticamente il risultato. Puoi usarlo per calcolare sconti, aumenti, 
+        proporzioni e confronti. È uno strumento gratuito, veloce e sempre disponibile online, ideale 
+        per chi vuole ottenere risultati precisi in modo immediato.
+    </p>
+</section>
 
-    <button onclick="calcolaPercentuale()" class="btn">Calcola</button>
+<!-- AREA TOOL -->
+<section class="tool">
+    <label for="valore">Valore iniziale:</label>
+    <input type="number" id="valore" placeholder="Inserisci valore">
 
-    <div id="risultato" class="result-box" style="display:none;">
-        <h2>Risultato</h2>
-        <p><strong>Percentuale:</strong> <span id="risultatoPercentuale"></span></p>
-    </div>
+    <label for="percentuale">Percentuale (%):</label>
+    <input type="number" id="percentuale" placeholder="Inserisci percentuale">
 
-</main>
+    <button onclick="calcolaPercentuale()">Calcola</button>
 
-<footer>
-    <a href="index.html">← Torna alla Home</a>
-</footer>
+    <div id="risultato"></div>
+</section>
 
 <script>
 function calcolaPercentuale() {
-    const numero = parseFloat(document.getElementById("numero").value);
+    const valore = parseFloat(document.getElementById("valore").value);
     const percentuale = parseFloat(document.getElementById("percentuale").value);
 
-    if (isNaN(numero) || isNaN(percentuale)) {
-        alert("Inserisci valori validi.");
+    if (isNaN(valore) || isNaN(percentuale)) {
+        document.getElementById("risultato").innerHTML = "Inserisci valori validi.";
         return;
     }
 
-    const risultato = (numero * percentuale) / 100;
+    const risultato = valore * (percentuale / 100);
 
-    document.getElementById("risultatoPercentuale").textContent = risultato.toFixed(2) + " €";
-    document.getElementById("risultato").style.display = "block";
+    document.getElementById("risultato").innerHTML =
+        "<p>Risultato: " + risultato.toFixed(2) + "</p>";
 }
 </script>
+
+<footer>
+    <p>© 2026 ED Tools</p>
+</footer>
 
 </body>
 </html>
