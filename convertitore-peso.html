@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Convertitore Peso kg ↔ lb ↔ oz | ED Tools</title>
+    <meta name="description" content="Converti rapidamente il peso tra chilogrammi, libbre e once. Strumento gratuito, semplice e immediato.">
+    <meta name="keywords" content="convertitore peso, kg in lb, lb in kg, once, once in grammi, convertitore kg lb oz">
+
+    <meta property="og:title" content="Convertitore Peso kg ↔ lb ↔ oz - ED Tools">
+    <meta property="og:description" content="Converti peso tra chilogrammi, libbre e once in pochi secondi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.edtoolsweb.it/convertitore-peso.html">
+    <meta property="og:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Convertitore Peso kg ↔ lb ↔ oz - ED Tools">
+    <meta name="twitter:description" content="Converti peso tra chilogrammi, libbre e once in pochi secondi.">
+    <meta name="twitter:image" content="https://www.edtoolsweb.it/favicon.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Convertitore Peso",
+      "description": "Strumento gratuito per convertire il peso tra chilogrammi, libbre e once.",
+      "url": "https://www.edtoolsweb.it/convertitore-peso.html"
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Convertitore di Peso (kg ↔ lb ↔ oz)</h1>
+</header>
+
+<section class="content">
+    <p>
+        Il convertitore di peso di ED Tools ti permette di trasformare rapidamente un valore da chilogrammi a 
+        libbre e once, e viceversa. È uno strumento utile in moltissimi contesti: cucina, sport, viaggi, 
+        spedizioni, acquisti online e confronto tra sistemi di misura diversi.
+    </p>
+
+    <p>
+        I sistemi di misura più utilizzati sono:
+    </p>
+
+    <ul>
+        <li><strong>Chilogrammi (kg)</strong> – unità di misura del sistema metrico, usata in Italia e in Europa.</li>
+        <li><strong>Libbre (lb)</strong> – unità di misura molto diffusa nei paesi anglosassoni.</li>
+        <li><strong>Once (oz)</strong> – spesso utilizzata per pesi più piccoli, soprattutto in cucina e nelle etichette alimentari.</li>
+    </ul>
+
+    <p>
+        Con questo strumento puoi inserire un valore in una delle unità disponibili e ottenere automaticamente 
+        le conversioni nelle altre due. Il calcolo è immediato, gratuito e non richiede alcuna registrazione.
+    </p>
+</section>
+
+<section class="tool">
+    <label for="kg">Chilogrammi (kg):</label>
+    <input type="number" id="kg" step="0.001" placeholder="Es. 1.5" oninput="daKg()">
+
+    <label for="lb">Libbre (lb):</label>
+    <input type="number" id="lb" step="0.001" placeholder="Es. 3.3" oninput="daLb()">
+
+    <label for="oz">Once (oz):</label>
+    <input type="number" id="oz" step="0.001" placeholder="Es. 10.5" oninput="daOz()">
+</section>
+
+<script>
+const KG_PER_LB = 0.45359237;
+const OZ_PER_LB = 16;
+
+function daKg() {
+    const kg = parseFloat(document.getElementById("kg").value);
+    if (isNaN(kg)) {
+        pulisci("kg");
+        return;
+    }
+    const lb = kg / KG_PER_LB;
+    const oz = lb * OZ_PER_LB;
+    aggiornaCampi("kg", kg, lb, oz);
+}
+
+function daLb() {
+    const lb = parseFloat(document.getElementById("lb").value);
+    if (isNaN(lb)) {
+        pulisci("lb");
+        return;
+    }
+    const kg = lb * KG_PER_LB;
+    const oz = lb * OZ_PER_LB;
+    aggiornaCampi("lb", kg, lb, oz);
+}
+
+function daOz() {
+    const oz = parseFloat(document.getElementById("oz").value);
+    if (isNaN(oz)) {
+        pulisci("oz");
+        return;
+    }
+    const lb = oz / OZ_PER_LB;
+    const kg = lb * KG_PER_LB;
+    aggiornaCampi("oz", kg, lb, oz);
+}
+
+function aggiornaCampi(sorgente, kg, lb, oz) {
+    if (sorgente !== "kg") document.getElementById("kg").value = kg.toFixed(3);
+    if (sorgente !== "lb") document.getElementById("lb").value = lb.toFixed(3);
+    if (sorgente !== "oz") document.getElementById("oz").value = oz.toFixed(3);
+}
+
+function pulisci(sorgente) {
+    if (sorgente !== "kg") document.getElementById("kg").value = "";
+    if (sorgente !== "lb") document.getElementById("lb").value = "";
+    if (sorgente !== "oz") document.getElementById("oz").value = "";
+}
+</script>
+
+<footer>
+    <p>© 2026 ED Tools</p>
+</footer>
+
+</body>
+</html>
