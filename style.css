@@ -1,119 +1,131 @@
-/* ====== RESET ====== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+/* ===========================
+   VARIABILI COLORI
+=========================== */
+:root {
+    --primary: #0056b3;
+    --primary-light: #e9f2ff;
+    --text-dark: #222;
+    --text-light: #e6e6e6;
+    --bg-light: #f4f4f4;
+    --bg-dark: #121212;
+    --card-light: #ffffff;
+    --card-dark: #1e1e1e;
 }
 
+/* ===========================
+   GLOBAL
+=========================== */
 body {
-    background: #f7f7f7;
-    color: #333;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+    background: var(--bg-dark);
+    color: var(--text-light);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+nav {
+    background: var(--primary);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+nav a {
+    color: white;
+    margin: 0 12px;
+}
+
+.toggle-dark {
+    cursor: pointer;
+    padding: 8px 14px;
+    background: white;
+    color: var(--primary);
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* ===========================
+   GRID STRUMENTI
+=========================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: var(--card-light);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s, background 0.3s;
+}
+
+body.dark .card {
+    background: var(--card-dark);
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* ===========================
+   SEZIONI TESTUALI
+=========================== */
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
     line-height: 1.6;
 }
 
-/* ====== HERO ====== */
-.hero {
-    background: linear-gradient(135deg, #4a90e2, #357ABD);
-    color: white;
+.novita {
+    background: var(--primary-light);
+    padding: 30px;
     text-align: center;
-    padding: 60px 20px;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+body.dark .novita {
+    background: #0d1a33;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-
-/* ====== SEZIONI ====== */
-section {
-    padding: 40px 20px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #222;
-}
-
-/* ====== INTRO ====== */
-.intro p {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-/* ====== GRID ====== */
-.tools-grid .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
-/* ====== CARD ====== */
-.tool-card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #333;
-    border: 1px solid #ddd;
-    transition: 0.25s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.tool-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-    border-color: #4a90e2;
-}
-
-.tool-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-    color: #357ABD;
-}
-
-.tool-card p {
-    font-size: 1rem;
-    opacity: 0.85;
-}
-
-/* ====== LINK “MORE TOOLS” ====== */
-.more-tools {
-    margin-top: 25px;
-    font-size: 1.1rem;
-}
-
-.more-tools a {
-    color: #357ABD;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.more-tools a:hover {
-    text-decoration: underline;
-}
-
-/* ====== ABOUT ====== */
-.about p {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-/* ====== FOOTER ====== */
+/* ===========================
+   FOOTER
+=========================== */
 footer {
-    text-align: center;
+    background: var(--primary);
+    color: white;
     padding: 20px;
-    background: #eee;
-    margin-top: 40px;
-    font-size: 0.95rem;
-    color: #555;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer a {
+    color: white;
+    margin: 0 10px;
 }
