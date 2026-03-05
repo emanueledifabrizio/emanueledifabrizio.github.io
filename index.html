@@ -3,78 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ED Tools - Strumenti Utili Online</title>
+    <meta name="description" content="ED Tools offre strumenti utili come calcolatori, convertitori, generatori e molto altro. Tutto gratuito, semplice e veloce.">
 
-    <title>ED Tools – Strumenti Online Gratuiti</title>
-    <meta name="description" content="ED Tools offre strumenti online gratuiti, veloci e semplici da usare. Calcolatori, utility e strumenti utili per tutti.">
+    <!-- AdSense Global -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2419497517772893" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #222;
+            transition: background 0.3s, color 0.3s;
+        }
 
-    <!-- Codice globale AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2419497517772893"
-     crossorigin="anonymous"></script>
+        /* Dark Mode */
+        body.dark {
+            background: #121212;
+            color: #e6e6e6;
+        }
+
+        /* Navbar */
+        nav {
+            background: #0056b3;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .toggle-dark {
+            cursor: pointer;
+            padding: 8px 14px;
+            background: white;
+            color: #0056b3;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        /* Hero */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        /* Grid strumenti */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        body.dark .card {
+            background: #1e1e1e;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+        }
+
+        /* Sezione Novità */
+        .novita {
+            padding: 30px;
+            text-align: center;
+            background: #e9f2ff;
+        }
+
+        body.dark .novita {
+            background: #0d1a33;
+        }
+
+        /* Footer */
+        footer {
+            background: #0056b3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+
+        window.onload = () => {
+            if (localStorage.getItem("darkMode") === "true") {
+                document.body.classList.add("dark");
+            }
+        };
+    </script>
 </head>
 
 <body>
 
-<header class="hero">
-    <h1>ED Tools</h1>
-    <p>Strumenti online gratuiti, semplici e veloci da usare.</p>
-</header>
+    <!-- NAVBAR -->
+    <nav>
+        <div><strong>ED Tools</strong></div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="tools.html">Tools</a>
+            <a href="chi-sono.html">Chi sono</a>
+            <a href="faq.html">FAQ</a>
+            <a href="novita.html">Novità</a>
+            <a href="contatti.html">Contatti</a>
+        </div>
+        <div class="toggle-dark" onclick="toggleDarkMode()">Dark Mode</div>
+    </nav>
 
-<section class="intro">
-    <h2>Benvenuto su ED Tools</h2>
-    <p>
-        Una raccolta di strumenti utili per semplificare la tua vita digitale.
-        Tutti gli strumenti sono gratuiti, veloci e accessibili da qualsiasi dispositivo.
-    </p>
-</section>
+    <!-- HERO -->
+    <header>
+        <h1>Benvenuto su ED Tools</h1>
+        <p>Strumenti utili, veloci e gratuiti per tutti.</p>
+    </header>
 
-<section class="tools-grid">
-    <h2>I nostri strumenti</h2>
+    <!-- GRID STRUMENTI -->
+    <section class="grid">
 
-    <div class="tool-card">
-        <h3>Calcolatrice</h3>
-        <p>Una calcolatrice semplice e immediata.</p>
-        <a href="calcolatrice.html" class="button">Apri</a>
+        <div class="card"><a href="calcolatore-imc.html">Calcolatore IMC</a><p>Calcola il tuo indice di massa corporea.</p></div>
+        <div class="card"><a href="calcolatore-interesse-composto.html">Interesse composto</a><p>Simula la crescita dei tuoi risparmi.</p></div>
+        <div class="card"><a href="calcolatore-iva.html">Calcolatore IVA</a><p>Aggiungi o rimuovi l'IVA facilmente.</p></div>
+        <div class="card"><a href="calcolatore-percentuale.html">Percentuale</a><p>Calcola percentuali in un attimo.</p></div>
+        <div class="card"><a href="calcolatore-sconto.html">Sconto</a><p>Calcola il prezzo scontato.</p></div>
+        <div class="card"><a href="contatore-caratteri.html">Contatore caratteri</a><p>Conta caratteri e parole.</p></div>
+        <div class="card"><a href="convertitore-euro-lira.html">Euro ↔ Lira</a><p>Converti euro in lire e viceversa.</p></div>
+        <div class="card"><a href="convertitore-peso.html">Convertitore peso</a><p>Kg, g, lb e molto altro.</p></div>
+        <div class="card"><a href="convertitore-temperatura.html">Temperatura</a><p>Celsius, Fahrenheit, Kelvin.</p></div>
+        <div class="card"><a href="generatore-password.html">Password</a><p>Genera password sicure.</p></div>
+        <div class="card"><a href="generatore-qr.html">QR Code</a><p>Crea QR Code personalizzati.</p></div>
+
+    </section>
+
+    <!-- ADSENSE BLOCCO 1 -->
+    <div style="margin: 20px auto; text-align:center;">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2419497517772893"
+            data-ad-slot="6881296907"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
-    <div class="tool-card">
-        <h3>Generatore Password</h3>
-        <p>Crea password sicure e casuali.</p>
-        <a href="password.html" class="button">Apri</a>
+    <!-- SEZIONE NOVITÀ -->
+    <section class="novita">
+        <h2>Novità</h2>
+        <p>Nuovi strumenti in arrivo! ED Tools è un progetto in continua crescita.</p>
+    </section>
+
+    <!-- ADSENSE BLOCCO 2 -->
+    <div style="margin: 20px auto; text-align:center;">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2419497517772893"
+            data-ad-slot="6881296907"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
-    <div class="tool-card">
-        <h3>Convertitore Testo</h3>
-        <p>Maiuscolo, minuscolo e molto altro.</p>
-        <a href="testo.html" class="button">Apri</a>
-    </div>
-
-</section>
-
-<!-- BLOCCO ADSENSE INSERITO DOPO GLI STRUMENTI -->
-<ins class="adsbygoogle"
-     style="display:block; margin: 40px auto;"
-     data-ad-client="ca-pub-2419497517772893"
-     data-ad-slot="6881296907"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<section>
-    <h2>Un progetto in continua crescita</h2>
-    <p>
-        ED Tools è un progetto in evoluzione. Nuovi strumenti vengono aggiunti regolarmente,
-        con l’obiettivo di offrire utilità semplici, veloci e accessibili a tutti.
-    </p>
-</section>
-
-<footer>
-    <p>© 2026 ED Tools — Tutti i diritti riservati</p>
-    <p><a href="contatti.html">Contatti</a> — <a href="mailto:emanueledifabrizio@icloud.com">emanueledifabrizio@icloud.com</a></p>
-</footer>
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="tools.html">Tools</a> |
+            <a href="chi-sono.html">Chi sono</a> |
+            <a href="faq.html">FAQ</a> |
+            <a href="novita.html">Novità</a> |
+            <a href="contatti.html">Contatti</a>
+        </p>
+        <p>© 2026 ED Tools - Tutti i diritti riservati</p>
+    </footer>
 
 </body>
 </html>
