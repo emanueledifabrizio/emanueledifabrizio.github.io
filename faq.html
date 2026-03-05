@@ -3,116 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - ED Tools</title>
+    <meta name="description" content="Domande frequenti su ED Tools.">
 
-    <title>FAQ - Domande Frequenti | ED Tools</title>
-    <meta name="description" content="Domande frequenti su ED Tools: funzionamento degli strumenti, affidabilità dei calcoli, privacy, aggiornamenti e contatti.">
-    <meta name="keywords" content="faq, domande frequenti, ed tools, informazioni, supporto">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2419497517772893" crossorigin="anonymous"></script>
 
-    <meta property="og:title" content="FAQ - ED Tools">
-    <meta property="og:description" content="Domande frequenti sul funzionamento degli strumenti di ED Tools.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.edtoolsweb.it/faq.html">
-    <meta property="og:image" content="https://www.edtoolsweb.it/favicon.png">
+    <style>
+        body { margin:0; font-family:Arial; background:#f4f4f4; color:#222; transition:0.3s; }
+        body.dark { background:#121212; color:#e6e6e6; }
+        nav { background:#0056b3; padding:15px; display:flex; justify-content:space-between; align-items:center; color:white; }
+        nav a { color:white; margin:0 12px; text-decoration:none; font-weight:bold; }
+        .toggle-dark { cursor:pointer; padding:8px 14px; background:white; color:#0056b3; border-radius:6px; font-weight:bold; }
+        header { text-align:center; padding:40px 20px; }
+        section { max-width:800px; margin:auto; padding:20px; line-height:1.6; }
+        h3 { margin-top:25px; }
+        footer { background:#0056b3; color:white; padding:20px; text-align:center; margin-top:30px; }
+        footer a { color:white; text-decoration:none; margin:0 10px; }
+    </style>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="FAQ - ED Tools">
-    <meta name="twitter:description" content="Domande frequenti sul funzionamento degli strumenti di ED Tools.">
-    <meta name="twitter:image" content="https://www.edtoolsweb.it/favicon.png">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Che cos'è ED Tools?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "ED Tools è una raccolta di strumenti online gratuiti progettati per semplificare calcoli, conversioni e operazioni quotidiane."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Gli strumenti sono gratuiti?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sì, tutti gli strumenti presenti su ED Tools sono completamente gratuiti e utilizzabili senza registrazione."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "I calcoli sono affidabili?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sì, gli strumenti utilizzano formule matematiche standard e tassi ufficiali quando necessari, come nel caso della conversione Euro-Lira."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Come posso contattare l'autore?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Puoi contattare l'autore tramite la pagina Contatti o scrivendo all'indirizzo email indicato sul sito."
-          }
-        }
-      ]
-    }
+    <script>
+        function toggleDarkMode(){ document.body.classList.toggle("dark"); localStorage.setItem("darkMode", document.body.classList.contains("dark")); }
+        window.onload=()=>{ if(localStorage.getItem("darkMode")==="true"){ document.body.classList.add("dark"); } };
     </script>
-
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<nav>
+    <div><strong>ED Tools</strong></div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="tools.html">Tools</a>
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="faq.html">FAQ</a>
+        <a href="novita.html">Novità</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+    <div class="toggle-dark" onclick="toggleDarkMode()">Dark Mode</div>
+</nav>
+
 <header>
-    <h1>Domande Frequenti (FAQ)</h1>
+    <h1>Domande Frequenti</h1>
 </header>
 
-<section class="content">
-    <p>
-        In questa pagina trovi le risposte alle domande più comuni riguardo ED Tools, il funzionamento 
-        degli strumenti e le informazioni utili per utilizzare al meglio il sito. L’obiettivo è offrire 
-        un’esperienza chiara, trasparente e semplice per tutti gli utenti.
-    </p>
+<section>
+    <h3>Gli strumenti sono gratuiti?</h3>
+    <p>Sì, tutti gli strumenti di ED Tools sono completamente gratuiti.</p>
 
-    <h2>Che cos'è ED Tools?</h2>
-    <p>
-        ED Tools è una piattaforma che raccoglie strumenti online gratuiti pensati per semplificare calcoli, 
-        conversioni e operazioni quotidiane. Ogni tool è progettato per essere veloce, intuitivo e preciso, 
-        così da permettere a chiunque di ottenere risultati immediati senza difficoltà.
-    </p>
+    <h3>Posso usare ED Tools da smartphone?</h3>
+    <p>Certo! Tutti gli strumenti sono ottimizzati per dispositivi mobili.</p>
 
-    <h2>Gli strumenti sono gratuiti?</h2>
-    <p>
-        Sì, tutti gli strumenti presenti sul sito sono completamente gratuiti. Non è richiesta alcuna 
-        registrazione e non ci sono costi nascosti. L’obiettivo del progetto è offrire utilità reali a 
-        chiunque ne abbia bisogno.
-    </p>
+    <h3>Come vengono creati gli strumenti?</h3>
+    <p>Ogni strumento è sviluppato manualmente con HTML, CSS e JavaScript per garantire velocità e affidabilità.</p>
 
-    <h2>I calcoli sono affidabili?</h2>
-    <p>
-        Tutti i calcoli vengono eseguiti tramite formule matematiche standard e, quando necessario, 
-        utilizzano valori ufficiali come il tasso di conversione Euro-Lira. Gli strumenti vengono 
-        aggiornati regolarmente per garantire precisione e affidabilità.
-    </p>
-
-    <h2>Come posso contattare l'autore?</h2>
-    <p>
-        Puoi contattarmi tramite la pagina <a href="contatti.html">Contatti</a> oppure scrivendo 
-        direttamente all’indirizzo email indicato sul sito. Rispondo personalmente a ogni messaggio 
-        e sono sempre disponibile per suggerimenti o collaborazioni.
-    </p>
-
-    <h2>Posso suggerire nuovi strumenti?</h2>
-    <p>
-        Certamente! Se hai idee per nuovi strumenti o funzionalità, puoi inviarmele tramite email. 
-        Il progetto è in continua evoluzione e ogni suggerimento è prezioso per migliorare ED Tools.
-    </p>
+    <h3>Posso suggerire nuovi strumenti?</h3>
+    <p>Sì! Puoi contattarmi tramite la pagina Contatti.</p>
 </section>
 
 <footer>
-    <p>© 2026 ED Tools</p>
+    <p>
+        <a href="index.html">Home</a> |
+        <a href="tools.html">Tools</a> |
+        <a href="chi-sono.html">Chi sono</a> |
+        <a href="faq.html">FAQ</a> |
+        <a href="novita.html">Novità</a> |
+        <a href="contatti.html">Contatti</a>
+    </p>
+    <p>© 2026 ED Tools - Tutti i diritti riservati</p>
 </footer>
 
 </body>
