@@ -3,90 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novità - ED Tools</title>
+    <meta name="description" content="Le ultime novità e aggiornamenti di ED Tools.">
 
-    <title>Novità - Aggiornamenti ED Tools</title>
-    <meta name="description" content="Scopri tutte le novità di ED Tools: nuovi strumenti, aggiornamenti, miglioramenti e funzionalità in arrivo. Pagina sempre aggiornata.">
-    <meta name="keywords" content="novità, aggiornamenti, ed tools, nuovi strumenti, changelog">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2419497517772893" crossorigin="anonymous"></script>
 
-    <meta property="og:title" content="Novità - ED Tools">
-    <meta property="og:description" content="Tutte le novità e gli aggiornamenti di ED Tools.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.edtoolsweb.it/novita.html">
-    <meta property="og:image" content="https://www.edtoolsweb.it/favicon.png">
+    <style>
+        body { margin:0; font-family:Arial; background:#f4f4f4; color:#222; transition:0.3s; }
+        body.dark { background:#121212; color:#e6e6e6; }
+        nav { background:#0056b3; padding:15px; display:flex; justify-content:space-between; align-items:center; color:white; }
+        nav a { color:white; margin:0 12px; text-decoration:none; font-weight:bold; }
+        .toggle-dark { cursor:pointer; padding:8px 14px; background:white; color:#0056b3; border-radius:6px; font-weight:bold; }
+        header { text-align:center; padding:40px 20px; }
+        section { max-width:800px; margin:auto; padding:20px; line-height:1.6; }
+        h3 { margin-top:25px; }
+        footer { background:#0056b3; color:white; padding:20px; text-align:center; margin-top:30px; }
+        footer a { color:white; text-decoration:none; margin:0 10px; }
+    </style>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Novità - ED Tools">
-    <meta name="twitter:description" content="Tutte le novità e gli aggiornamenti di ED Tools.">
-    <meta name="twitter:image" content="https://www.edtoolsweb.it/favicon.png">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Novità ED Tools",
-      "description": "Pagina dedicata agli aggiornamenti e alle nuove funzionalità di ED Tools.",
-      "url": "https://www.edtoolsweb.it/novita.html"
-    }
+    <script>
+        function toggleDarkMode(){ document.body.classList.toggle("dark"); localStorage.setItem("darkMode", document.body.classList.contains("dark")); }
+        window.onload=()=>{ if(localStorage.getItem("darkMode")==="true"){ document.body.classList.add("dark"); } };
     </script>
-
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<nav>
+    <div><strong>ED Tools</strong></div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="tools.html">Tools</a>
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="faq.html">FAQ</a>
+        <a href="novita.html">Novità</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+    <div class="toggle-dark" onclick="toggleDarkMode()">Dark Mode</div>
+</nav>
+
 <header>
-    <h1>Novità e Aggiornamenti</h1>
+    <h1>Novità</h1>
 </header>
 
-<section class="content">
-    <p>
-        In questa pagina trovi tutte le novità e gli aggiornamenti relativi a ED Tools. Il sito è in continua 
-        evoluzione e vengono aggiunti regolarmente nuovi strumenti, miglioramenti e ottimizzazioni per offrire 
-        un’esperienza sempre più completa, veloce e intuitiva. Ogni aggiornamento è pensato per migliorare la 
-        qualità del servizio e rendere gli strumenti più utili e affidabili.
-    </p>
+<section>
+    <h3>Homepage completamente rinnovata</h3>
+    <p>La homepage è stata ricostruita con un design moderno, dark mode e 11 strumenti.</p>
 
-    <h2>📅 Febbraio 2026 – Restyling completo del sito</h2>
-    <p>
-        Tutte le pagine sono state ricostruite da zero con contenuti più ricchi, struttura ottimizzata e 
-        maggiore attenzione alla qualità. Questo aggiornamento migliora la leggibilità, la coerenza grafica 
-        e la compatibilità con i requisiti di Google AdSense.
-    </p>
+    <h3>Aggiunta la pagina Tools</h3>
+    <p>Ora puoi trovare tutti gli strumenti in un’unica pagina dedicata.</p>
 
-    <h2>🛠️ Nuovi strumenti aggiunti</h2>
-    <ul>
-        <li>Generatore di password sicure</li>
-        <li>Convertitore di temperatura</li>
-        <li>Calcolatore di sconto</li>
-        <li>Calcolatore percentuale</li>
-    </ul>
-
-    <p>
-        Ogni strumento è stato progettato per essere semplice, veloce e preciso, con un’interfaccia chiara e 
-        risultati immediati.
-    </p>
-
-    <h2>⚙️ Miglioramenti tecnici</h2>
-    <ul>
-        <li>Ottimizzazione SEO di tutte le pagine</li>
-        <li>Aggiunta di Schema.org per migliorare la visibilità nei motori di ricerca</li>
-        <li>Codice più pulito e leggero</li>
-        <li>Maggiore compatibilità mobile</li>
-    </ul>
-
-    <h2>🚀 Funzionalità in arrivo</h2>
-    <p>
-        Nei prossimi aggiornamenti verranno introdotti nuovi strumenti e ulteriori miglioramenti grafici. 
-        L’obiettivo è ampliare la piattaforma e offrire un numero sempre maggiore di utilità online gratuite.
-    </p>
-
-    <p>
-        Continua a visitare questa pagina per rimanere aggiornato sulle ultime novità!
-    </p>
+    <h3>Nuovi strumenti in arrivo</h3>
+    <p>ED Tools continuerà a crescere con nuovi calcolatori e convertitori.</p>
 </section>
 
 <footer>
-    <p>© 2026 ED Tools</p>
+    <p>
+        <a href="index.html">Home</a> |
+        <a href="tools.html">Tools</a> |
+        <a href="chi-sono.html">Chi sono</a> |
+        <a href="faq.html">FAQ</a> |
+        <a href="novita.html">Novità</a> |
+        <a href="contatti.html">Contatti</a>
+    </p>
+    <p>© 2026 ED Tools - Tutti i diritti riservati</p>
 </footer>
 
 </body>
