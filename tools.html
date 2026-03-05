@@ -3,91 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutti gli Strumenti - ED Tools</title>
+    <meta name="description" content="Lista completa degli strumenti disponibili su ED Tools: calcolatori, convertitori, generatori e molto altro.">
 
-    <title>ED Tools - Tutti gli Strumenti</title>
-    <meta name="description" content="Lista completa degli strumenti online gratuiti di ED Tools: calcolatori, convertitori e utility utili per tutti.">
+    <!-- AdSense Global -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2419497517772893" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #222;
+            transition: background 0.3s, color 0.3s;
+        }
 
-    <!-- Codice AdSense globale -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
-     crossorigin="anonymous"></script>
+        body.dark {
+            background: #121212;
+            color: #e6e6e6;
+        }
+
+        nav {
+            background: #0056b3;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 12px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .toggle-dark {
+            cursor: pointer;
+            padding: 8px 14px;
+            background: white;
+            color: #0056b3;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        body.dark .card {
+            background: #1e1e1e;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #0056b3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        }
+
+        window.onload = () => {
+            if (localStorage.getItem("darkMode") === "true") {
+                document.body.classList.add("dark");
+            }
+        };
+    </script>
 </head>
 
 <body>
 
-<header class="hero">
-    <h1>Tutti gli Strumenti</h1>
-    <p>La raccolta completa dei tool gratuiti disponibili su ED Tools.</p>
-</header>
+    <nav>
+        <div><strong>ED Tools</strong></div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="tools.html">Tools</a>
+            <a href="chi-sono.html">Chi sono</a>
+            <a href="faq.html">FAQ</a>
+            <a href="novita.html">Novità</a>
+            <a href="contatti.html">Contatti</a>
+        </div>
+        <div class="toggle-dark" onclick="toggleDarkMode()">Dark Mode</div>
+    </nav>
 
-<section class="tools-grid">
-    <h2>Strumenti disponibili</h2>
+    <header>
+        <h1>Tutti gli Strumenti</h1>
+        <p>La raccolta completa degli strumenti disponibili su ED Tools.</p>
+    </header>
 
-    <div class="grid">
+    <section class="grid">
 
-        <a class="tool-card" href="calcolatore-imc.html">
-            <h3>Calcolatore IMC</h3>
-            <p>Calcola il tuo indice di massa corporea.</p>
-        </a>
+        <div class="card"><a href="calcolatore-imc.html">Calcolatore IMC</a><p>Calcola il tuo indice di massa corporea.</p></div>
+        <div class="card"><a href="calcolatore-interesse-composto.html">Interesse composto</a><p>Simula la crescita dei tuoi risparmi.</p></div>
+        <div class="card"><a href="calcolatore-iva.html">Calcolatore IVA</a><p>Aggiungi o rimuovi l'IVA facilmente.</p></div>
+        <div class="card"><a href="calcolatore-percentuale.html">Percentuale</a><p>Calcola percentuali in un attimo.</p></div>
+        <div class="card"><a href="calcolatore-sconto.html">Sconto</a><p>Calcola il prezzo scontato.</p></div>
+        <div class="card"><a href="contatore-caratteri-parole.html">Contatore caratteri</a><p>Conta caratteri e parole.</p></div>
+        <div class="card"><a href="convertitore-euro-lira.html">Euro ↔ Lira</a><p>Converti euro in lire e viceversa.</p></div>
+        <div class="card"><a href="convertitore-peso.html">Convertitore peso</a><p>Kg, g, lb e molto altro.</p></div>
+        <div class="card"><a href="convertitore-temperatura.html">Temperatura</a><p>Celsius, Fahrenheit, Kelvin.</p></div>
+        <div class="card"><a href="generatore-password.html">Password</a><p>Genera password sicure.</p></div>
+        <div class="card"><a href="generatore_qr.html">QR Code</a><p>Crea QR Code personalizzati.</p></div>
 
-        <a class="tool-card" href="contatore-caratteri-parole.html">
-            <h3>Contatore Caratteri</h3>
-            <p>Conta caratteri e parole in tempo reale.</p>
-        </a>
+    </section>
 
-        <a class="tool-card" href="generatore_qr.html">
-    <h3>Generatore QR Code</h3>
-    <p>Crea QR Code personalizzati e scaricali.</p>
-</a>
-
-
-        <a class="tool-card" href="calcolatore-interesse-composto.html">
-            <h3>Interesse Composto</h3>
-            <p>Calcola la crescita del tuo capitale.</p>
-        </a>
-
-        <a class="tool-card" href="convertitore-peso.html">
-            <h3>Convertitore Peso</h3>
-            <p>Converte tra kg, lb e oz.</p>
-        </a>
-
-        <a class="tool-card" href="calcolatore-iva.html">
-            <h3>Calcolatore IVA</h3>
-            <p>Calcola imponibile, IVA e totale.</p>
-        </a>
-
-        <a class="tool-card" href="calcolatore-percentuale.html">
-            <h3>Calcolatore Percentuale</h3>
-            <p>Percentuali, aumenti e proporzioni.</p>
-        </a>
-
-        <a class="tool-card" href="calcolatore-sconto.html">
-            <h3>Calcolatore Sconto</h3>
-            <p>Calcola sconti e prezzi finali.</p>
-        </a>
-
-        <a class="tool-card" href="convertitore-euro-lira.html">
-            <h3>Euro ↔ Lira</h3>
-            <p>Conversione con tasso ufficiale.</p>
-        </a>
-
-        <a class="tool-card" href="convertitore-temperatura.html">
-            <h3>Convertitore Temperatura</h3>
-            <p>Celsius, Fahrenheit e Kelvin.</p>
-        </a>
-
-        <a class="tool-card" href="generatore-password.html">
-            <h3>Password Sicure</h3>
-            <p>Genera password robuste e casuali.</p>
-        </a>
-
+    <!-- ADSENSE -->
+    <div style="margin: 20px auto; text-align:center;">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-2419497517772893"
+            data-ad-slot="6881296907"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
-</section>
 
-<footer>
-    <p>© 2026 ED Tools — Tutti i diritti riservati</p>
-</footer>
+    <footer>
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="tools.html">Tools</a> |
+            <a href="chi-sono.html">Chi sono</a> |
+            <a href="faq.html">FAQ</a> |
+            <a href="novita.html">Novità</a> |
+            <a href="contatti.html">Contatti</a>
+        </p>
+        <p>© 2026 ED Tools - Tutti i diritti riservati</p>
+    </footer>
 
 </body>
 </html>
