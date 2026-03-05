@@ -3,78 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Chi sono - ED Tools</title>
-    <meta name="description" content="Scopri chi sono, la mia storia e la missione dietro ED Tools. Un progetto creato per offrire strumenti utili, semplici e gratuiti.">
-    <meta name="keywords" content="chi sono, ed tools, autore, sviluppatore, progetto personale">
+    <meta name="description" content="Scopri chi ha creato ED Tools e la missione del progetto.">
 
-    <meta property="og:title" content="Chi sono - ED Tools">
-    <meta property="og:description" content="La storia e la missione dietro ED Tools.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.edtoolsweb.it/chi-sono.html">
-    <meta property="og:image" content="https://www.edtoolsweb.it/favicon.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2419497517772893" crossorigin="anonymous"></script>
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Chi sono - ED Tools">
-    <meta name="twitter:description" content="La storia e la missione dietro ED Tools.">
-    <meta name="twitter:image" content="https://www.edtoolsweb.it/favicon.png">
+    <style>
+        body { margin:0; font-family:Arial; background:#f4f4f4; color:#222; transition:0.3s; }
+        body.dark { background:#121212; color:#e6e6e6; }
+        nav { background:#0056b3; padding:15px; display:flex; justify-content:space-between; align-items:center; color:white; }
+        nav a { color:white; margin:0 12px; text-decoration:none; font-weight:bold; }
+        .toggle-dark { cursor:pointer; padding:8px 14px; background:white; color:#0056b3; border-radius:6px; font-weight:bold; }
+        header { text-align:center; padding:40px 20px; }
+        section { max-width:800px; margin:auto; padding:20px; line-height:1.6; }
+        footer { background:#0056b3; color:white; padding:20px; text-align:center; margin-top:30px; }
+        footer a { color:white; text-decoration:none; margin:0 10px; }
+    </style>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AboutPage",
-      "name": "Chi sono",
-      "description": "Pagina dedicata alla presentazione dell'autore di ED Tools.",
-      "url": "https://www.edtoolsweb.it/chi-sono.html",
-      "author": {
-        "@type": "Person",
-        "name": "Emanuele Di Fabrizio",
-        "jobTitle": "Web Developer",
-        "url": "https://www.edtoolsweb.it"
-      }
-    }
+    <script>
+        function toggleDarkMode(){ document.body.classList.toggle("dark"); localStorage.setItem("darkMode", document.body.classList.contains("dark")); }
+        window.onload=()=>{ if(localStorage.getItem("darkMode")==="true"){ document.body.classList.add("dark"); } };
     </script>
-
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<nav>
+    <div><strong>ED Tools</strong></div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="tools.html">Tools</a>
+        <a href="chi-sono.html">Chi sono</a>
+        <a href="faq.html">FAQ</a>
+        <a href="novita.html">Novità</a>
+        <a href="contatti.html">Contatti</a>
+    </div>
+    <div class="toggle-dark" onclick="toggleDarkMode()">Dark Mode</div>
+</nav>
 
 <header>
     <h1>Chi sono</h1>
 </header>
 
-<section class="content">
-    <p>
-        Mi chiamo <strong>Emanuele Di Fabrizio</strong> e sono un web developer appassionato di tecnologia, 
-        strumenti digitali e soluzioni semplici che migliorano la vita quotidiana. Ho creato ED Tools come 
-        progetto personale con l’obiettivo di offrire strumenti utili, veloci e gratuiti, accessibili a 
-        chiunque senza registrazioni o complicazioni.
-    </p>
-
-    <p>
-        L’idea nasce dalla mia esperienza nel mondo dello sviluppo web e dalla necessità di avere a 
-        disposizione strumenti affidabili per calcoli, conversioni e operazioni frequenti. Ho deciso di 
-        trasformare questa esigenza in un progetto concreto, costruendo una piattaforma chiara, intuitiva 
-        e in continua evoluzione.
-    </p>
-
-    <p>
-        Ogni pagina di ED Tools è progettata con cura, con attenzione alla precisione dei calcoli, alla 
-        qualità dei contenuti e alla facilità d’uso. Credo che la tecnologia debba essere semplice e 
-        accessibile, e per questo lavoro costantemente per migliorare il sito, aggiungere nuovi strumenti 
-        e offrire un’esperienza sempre più completa.
-    </p>
-
-    <p>
-        Questo progetto rappresenta il mio percorso di crescita come sviluppatore e la mia volontà di 
-        condividere qualcosa di utile con gli altri. Se hai suggerimenti, idee o vuoi collaborare, puoi 
-        contattarmi tramite la pagina dedicata. Sarò felice di ascoltarti.
-    </p>
+<section>
+    <p>Mi chiamo Emanuele e ho creato ED Tools con un obiettivo semplice: offrire strumenti utili, veloci e gratuiti per tutti.</p>
+    <p>Sono uno sviluppatore web appassionato di tecnologia, automazione e soluzioni pratiche. ED Tools è un progetto in continua crescita, nato per aiutare chiunque abbia bisogno di calcolatori, convertitori e generatori affidabili.</p>
+    <p>Ogni strumento è progettato per essere semplice, intuitivo e accessibile da qualsiasi dispositivo.</p>
 </section>
 
 <footer>
-    <p>© 2026 ED Tools</p>
+    <p>
+        <a href="index.html">Home</a> |
+        <a href="tools.html">Tools</a> |
+        <a href="chi-sono.html">Chi sono</a> |
+        <a href="faq.html">FAQ</a> |
+        <a href="novita.html">Novità</a> |
+        <a href="contatti.html">Contatti</a>
+    </p>
+    <p>© 2026 ED Tools - Tutti i diritti riservati</p>
 </footer>
 
 </body>
